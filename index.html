@@ -73,16 +73,13 @@
 
   <style>
     body { font-family: 'Ubuntu', sans-serif; color: #1c1c1c; }
-    .hero-bg { background: linear-gradient(135deg, #607466 0%, #4d5e52 100%); }
-    .section-sage { background: linear-gradient(135deg, #607466 0%, #4d5e52 100%); }
+    .hero-bg { background: linear-gradient(135deg, #1c1c1c 0%, #607466 50%, #628395 100%); }
+    .section-sage { background: linear-gradient(135deg, #1c1c1c 0%, #607466 50%, #628395 100%); }
     .card { background:white; border-radius:1rem; box-shadow:0 1px 3px rgba(0,0,0,.1); padding:2rem; transition:box-shadow .2s,transform .2s; }
     .card:hover { box-shadow:0 4px 20px rgba(0,0,0,.12); transform:translateY(-2px); }
     .btn-sage { background:#607466; color:white; padding:.75rem 2rem; border-radius:.5rem; font-weight:500; display:inline-block; text-decoration:none; transition:all .2s; }
     .btn-sage:hover { background:#4d5e52; transform:translateY(-1px); }
-    .btn-white { background:white; color:#607466; padding:.75rem 2rem; border-radius:.5rem; font-weight:500; display:inline-block; text-decoration:none; transition:all .2s; }
-    .btn-white:hover { background:#f9fafb; transform:translateY(-1px); }
-    .btn-outline-white { border:2px solid white; color:white; padding:.75rem 2rem; border-radius:.5rem; font-weight:500; display:inline-block; text-decoration:none; transition:all .2s; }
-    .btn-outline-white:hover { background:rgba(255,255,255,.15); transform:translateY(-1px); }
+
     .tab-btn { padding:.5rem 1.25rem; border-radius:9999px; font-weight:500; font-size:.875rem; cursor:pointer; border:none; background:transparent; color:#6b7280; transition:all .2s; }
     .tab-btn.active { background:#607466; color:white; }
     .check-item::before { content:'✓'; color:#607466; font-weight:700; margin-right:.5rem; }
@@ -116,17 +113,20 @@
 
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
-    <div class="relative z-10 text-center text-white px-6 py-24 max-w-5xl mx-auto">
+    <div class="absolute inset-0 z-0"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white pt-20">
+      <div class="mb-8">
+        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png"
+             alt="Forest Park Picnics - Life is Short · Have a Picnic"
+             class="w-56 md:w-64 h-auto mx-auto" />
+      </div>
       <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">The Easiest Date Night<br/><span style="color:#D6CE93">in St. Louis</span></h1>
       <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" style="color:#EFEBCE">Curated picnic dates in Forest Park. Gourmet meals from STL's best restaurants. Zero hassle. Pure romance.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-        <a href="#book" class="btn-white">Book Your Picnic</a>
-        <a href="#experience" class="btn-outline-white">See What's Inside</a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#book" class="px-8 py-4 rounded-full text-lg font-semibold text-white hover:opacity-90 transition-all" style="background:#628395">Book Your Picnic</a>
+        <a href="#experience" class="px-8 py-4 rounded-full text-lg font-semibold border-2 hover:bg-white/10 transition-colors" style="border-color:#D6CE93;color:#D6CE93">See What's Inside</a>
       </div>
-      <p class="text-sm font-medium opacity-60 tracking-widest uppercase">Wednesday - Saturday · April - October</p>
-    </div>
-    <div class="absolute bottom-8 right-8 w-20 h-20 opacity-10">
-      <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" alt="" aria-hidden="true" class="w-full h-auto" />
+      <p class="mt-10 text-sm opacity-60 tracking-widest uppercase">Wednesday - Saturday · April - October</p>
     </div>
   </section>
 
@@ -175,18 +175,23 @@
   </section>
 
   <!-- PRIVATE PICNIC SEO SECTION -->
-  <section class="py-20 px-6" style="background:#efebce">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">St. Louis' Favorite Date</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">Private Picnic Dates in Forest Park, St. Louis</h2>
-        <p class="text-gray-600 leading-relaxed mb-4 text-sm">Forest Park is one of the largest urban parks in America — and one of the most romantic. We've taken the most beautiful setting in St. Louis and made it effortless.</p>
-        <p class="text-gray-600 leading-relaxed mb-4 text-sm">No reservations to fight over. No parking stress. No dishes. Just you, your person, a fully stocked basket, and two hours in one of the most beautiful places in the city.</p>
-        <p class="text-gray-600 leading-relaxed mb-8 text-sm">Every picnic comes with a 3-course meal from one of four rotating local restaurants — all from the Central West End and Grove neighborhoods, keeping your dollars right here in St. Louis.</p>
-        <a href="#book" class="btn-sage">Reserve Your Spot</a>
-      </div>
-      <div class="flex justify-center">
-        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" alt="Forest Park Picnics basket setup in Forest Park St. Louis" class="w-56 h-auto opacity-70" />
+  <section class="py-24 px-6" style="background:#efebce">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">St. Louis' Favorite Date</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">Private Picnic Dates in Forest Park, St. Louis</h2>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Forest Park is one of the largest urban parks in America — and one of the most romantic. We've taken the most beautiful setting in St. Louis and made it effortless.</p>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">No reservations to fight over. No parking stress. No dishes. Just you, your person, a fully stocked basket, and two hours in one of the most beautiful places in the city.</p>
+          <p class="text-gray-600 leading-relaxed mb-8 text-sm">Every picnic comes with a 3-course meal from one of four rotating local restaurants — all from the Central West End and Grove neighborhoods, keeping your dollars right here in St. Louis.</p>
+          <a href="#book" class="btn-sage">Reserve Your Spot</a>
+        </div>
+        <div>
+          <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/c15ced55-d34b-4307-87a7-7c8f4aacb00c/image.png"
+               alt="Forest Park Picnics basket setup with branded bento boxes, cups, ice cream chiller, and picnic essentials"
+               class="rounded-2xl shadow-2xl w-full"
+               onerror="" />
+        </div>
       </div>
     </div>
   </section>
