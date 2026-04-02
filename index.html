@@ -19,1234 +19,344 @@
   <meta property="og:image" content="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" />
   <meta property="og:site_name" content="Forest Park Picnics" />
 
-  <!-- TWITTER/X CARD -->
+  <!-- TWITTER/X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Forest Park Picnics | Romantic Picnic Dates in St. Louis" />
   <meta name="twitter:description" content="Zero hassle. Pure romance. Private picnic dates in Forest Park, St. Louis — 3-course meal, fully stocked basket, 2 hours of bliss. Book now." />
   <meta name="twitter:image" content="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" />
 
-  <!-- FAVICON -->
   <link rel="icon" href="/favicon.ico" />
-
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- BOKUN LOADER -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage:      '#607466',
+            'sage-dark': '#4d5e52',
+            beige:     '#d6ce93',
+            cream:     '#efebce',
+            charcoal:  '#1c1c1c',
+          },
+          fontFamily: { ubuntu: ['Ubuntu', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
   <script src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=2e3a19f9-d8dc-489d-bf79-c59ea4fcbbe3" async></script>
 
-  <!-- SCHEMA: LocalBusiness -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Forest Park Picnics",
-    "description": "Curated, zero-hassle picnic dates for couples in Forest Park, St. Louis. Three-course gourmet meals from four acclaimed local restaurants, fully stocked baskets, and two stunning locations — Art Hill and Pagoda Lake. Operating Wednesday–Saturday, April–October.",
-    "url": "https://www.forestparkpicnics.com",
-    "email": "hey@forestparkpicnics.com",
-    "image": "https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png",
-    "priceRange": "$149",
-    "currenciesAccepted": "USD",
-    "paymentAccepted": "Credit Card, Debit Card",
-    "areaServed": {
-      "@type": "City",
-      "name": "St. Louis",
-      "sameAs": "https://en.wikipedia.org/wiki/St._Louis"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.6407,
-      "longitude": -90.2906
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday"],
-        "opens": "11:30",
-        "closes": "13:30",
-        "validFrom": "2026-04-01",
-        "validThrough": "2026-10-31"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday"],
-        "opens": "17:30",
-        "closes": "19:30",
-        "validFrom": "2026-05-01",
-        "validThrough": "2026-09-30"
-      }
+    "@context":"https://schema.org","@type":"LocalBusiness","name":"Forest Park Picnics",
+    "description":"Curated, zero-hassle picnic dates for couples in Forest Park, St. Louis.",
+    "url":"https://forestparkpicnics.com","email":"hey@forestparkpicnics.com",
+    "image":"https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png",
+    "priceRange":"$149","currenciesAccepted":"USD","paymentAccepted":"Credit Card, Debit Card",
+    "areaServed":{"@type":"City","name":"St. Louis","sameAs":"https://en.wikipedia.org/wiki/St._Louis"},
+    "geo":{"@type":"GeoCoordinates","latitude":38.6407,"longitude":-90.2906},
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"11:30","closes":"13:30","validFrom":"2026-04-01","validThrough":"2026-10-31"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"17:30","closes":"19:30","validFrom":"2026-05-01","validThrough":"2026-09-30"}
     ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Picnic Experiences",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "Midday Picnic at Art Hill",
-          "description": "Lunch picnic near the St. Louis Art Museum with three-course gourmet meal, fully stocked basket, and all amenities. Wednesday–Saturday at 11:30am, April–October.",
-          "price": "149",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        },
-        {
-          "@type": "Offer",
-          "name": "Evening Picnic at Pagoda Lake",
-          "description": "Dinner picnic by The Muny with three-course gourmet meal, fully stocked basket, and all amenities. Wednesday–Saturday at 5:30pm, May–September.",
-          "price": "149",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        }
-      ]
-    },
-    "sameAs": [
-      "https://www.instagram.com/forestparkpicnics"
-    ]
+    "hasOfferCatalog":{"@type":"OfferCatalog","name":"Picnic Experiences","itemListElement":[
+      {"@type":"Offer","name":"Midday Picnic at Art Hill","price":"149","priceCurrency":"USD","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","name":"Evening Picnic at Pagoda Lake","price":"149","priceCurrency":"USD","availability":"https://schema.org/InStock"}
+    ]},
+    "sameAs":["https://www.instagram.com/forestparkpicnics"]
   }
   </script>
 
   <style>
-    /* ─── RESET & BASE ─────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream:   #efebce;
-      --ivory:   #ffffff;
-      --forest:  #607466;
-      --moss:    #4d5e52;
-      --gold:    #d6ce93;
-      --rust:    #628395;
-      --charcoal:#1c1c1c;
-      --warm-gray: #6b7a70;
-
-      --font-display: 'Ubuntu', sans-serif;
-      --font-body:    'Ubuntu', sans-serif;
-
-      --max-w: 1100px;
-      --section-pad: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--ivory);
-      color: var(--charcoal);
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-size: 1rem;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ─── NAV ──────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
-      background: rgba(253, 250, 244, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(184, 146, 74, 0.15);
-      transition: box-shadow 0.3s;
-    }
-
-    nav.scrolled { box-shadow: 0 2px 20px rgba(44,62,45,0.08); }
-
-    .nav-logo img {
-      height: 48px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--forest);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .nav-links .btn-nav {
-      background: var(--forest);
-      color: var(--cream) !important;
-      padding: 0.6rem 1.4rem;
-      letter-spacing: 0.1em;
-      transition: background 0.2s;
-    }
-
-    .nav-links .btn-nav:hover { background: var(--moss); }
-
-    /* ─── HERO ─────────────────────────────────── */
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem clamp(1.5rem, 5vw, 4rem) 5rem;
-      background: var(--cream);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,146,74,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(44,62,45,0.06) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 700;
-      line-height: 1.05;
-      color: var(--forest);
-      letter-spacing: -0.01em;
-      max-width: 800px;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.4s forwards;
-    }
-
-    .hero h1 em {
-      
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-family: var(--font-display);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 400;
-      
-      color: var(--warm-gray);
-      margin-top: 1.5rem;
-      max-width: 560px;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.6s forwards;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.8s forwards;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--forest);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 1rem 2.2rem;
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--moss);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      border: 1px solid var(--forest);
-      color: var(--forest);
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 1rem 2.2rem;
-      transition: all 0.25s;
-    }
-
-    .btn-secondary:hover {
-      background: var(--forest);
-      color: var(--cream);
-    }
-
-    .hero-meta {
-      margin-top: 3.5rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      opacity: 0;
-      animation: fadeUp 0.9s 1s forwards;
-    }
-
-    .hero-logo {
-      position: absolute;
-      bottom: 2.5rem;
-      right: clamp(1.5rem, 5vw, 4rem);
-      width: 90px;
-      opacity: 0.18;
-    }
-
-    /* ─── DIVIDER ───────────────────────────────── */
-    .ornament {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-      padding: 0.5rem 0;
-      color: var(--gold);
-      font-size: 1.2rem;
-      opacity: 0.5;
-    }
-
-    .ornament::before, .ornament::after {
-      content: '';
-      flex: 1;
-      max-width: 80px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.4;
-    }
-
-    /* ─── STATS BAR ─────────────────────────────── */
-    .stats {
-      background: var(--forest);
-      color: var(--cream);
-      padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
-    }
-
-    .stats-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 400;
-      color: var(--gold);
-      display: block;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-top: 0.4rem;
-      display: block;
-    }
-
-    /* ─── EXPERIENCE ────────────────────────────── */
-    .experience {
-      padding: var(--section-pad);
-      background: var(--ivory);
-    }
-
-    .experience-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--forest);
-      max-width: 600px;
-      margin-bottom: 3.5rem;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .exp-card {
-      padding: 2rem;
-      border: 1px solid rgba(184,146,74,0.2);
-      background: var(--cream);
-      transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-    }
-
-    .exp-card:hover {
-      border-color: rgba(184,146,74,0.5);
-      transform: translateY(-3px);
-    }
-
-    .exp-num {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 400;
-      color: var(--gold);
-      opacity: 0.3;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .exp-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--forest);
-      margin-bottom: 0.75rem;
-    }
-
-    .exp-card p {
-      font-size: 0.92rem;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    /* ─── HOW IT WORKS ──────────────────────────── */
-    .how {
-      padding: var(--section-pad);
-      background: var(--forest);
-      color: var(--cream);
-    }
-
-    .how-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .how .section-label { color: var(--gold); }
-    .how .section-title { color: var(--cream); }
-
-    .how-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 3rem;
-      margin-top: 1rem;
-    }
-
-    .step {
-      position: relative;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(184,146,74,0.3);
-    }
-
-    .step-num {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .step h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-      color: var(--cream);
-    }
-
-    .step p {
-      font-size: 0.9rem;
-      opacity: 0.75;
-      line-height: 1.7;
-    }
-
-    /* ─── SCHEDULE ──────────────────────────────── */
-    .schedule {
-      padding: var(--section-pad);
-      background: var(--cream);
-    }
-
-    .schedule-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .schedule-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .schedule-card {
-      padding: 2.5rem;
-      background: var(--ivory);
-      border-left: 3px solid var(--gold);
-    }
-
-    .schedule-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--forest);
-      margin-bottom: 0.5rem;
-    }
-
-    .schedule-card .location-sub {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      margin-bottom: 1.25rem;
-    }
-
-    .schedule-detail {
-      font-size: 0.88rem;
-      color: var(--charcoal);
-      margin-bottom: 0.35rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .schedule-detail strong {
-      color: var(--forest);
-      font-weight: 500;
-      min-width: 55px;
-    }
-
-    /* ─── PRIVATE PICNIC SEO SECTION ────────────── */
-    .picnic-section {
-      padding: var(--section-pad);
-      background: var(--ivory);
-      border-top: 1px solid rgba(184,146,74,0.15);
-    }
-
-    .picnic-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    @media (max-width: 680px) {
-      .picnic-inner { grid-template-columns: 1fr; gap: 2rem; }
-    }
-
-    .picnic-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 400;
-      color: var(--forest);
-      line-height: 1.2;
-      margin-bottom: 1.25rem;
-    }
-
-    .picnic-text p {
-      font-size: 0.95rem;
-      color: var(--warm-gray);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    .picnic-image img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-    }
-
-    /* ─── WHATS INCLUDED ────────────────────────── */
-    .included {
-      padding: var(--section-pad);
-      background: var(--cream);
-    }
-
-    .included-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .included-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-
-    .included-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.92rem;
-      color: var(--charcoal);
-    }
-
-    .included-list li::before {
-      content: '✓';
-      color: var(--gold);
-      font-weight: 600;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    /* ─── TESTIMONIALS ──────────────────────────── */
-    .testimonials {
-      padding: var(--section-pad);
-      background: var(--ivory);
-    }
-
-    .testimonials-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .testimonial {
-      padding: 2rem;
-      background: var(--cream);
-      border: 1px solid rgba(184,146,74,0.15);
-      position: relative;
-    }
-
-    .testimonial::before {
-      content: '\201C';
-      font-family: var(--font-display);
-      font-size: 4rem;
-      color: var(--gold);
-      opacity: 0.3;
-      position: absolute;
-      top: 0.5rem;
-      left: 1.25rem;
-      line-height: 1;
-    }
-
-    .stars {
-      color: var(--gold);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial p {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      
-      color: var(--forest);
-      line-height: 1.65;
-      margin-bottom: 1.25rem;
-    }
-
-    .testimonial-attr {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-    }
-
-    /* ─── EMAIL SIGNUP ──────────────────────────── */
-    .email-signup {
-      padding: var(--section-pad);
-      background: var(--forest);
-      color: var(--cream);
-      text-align: center;
-    }
-
-    .email-signup-inner {
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .email-signup h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-    }
-
-    .email-signup p {
-      font-size: 0.92rem;
-      opacity: 0.75;
-      margin-bottom: 2rem;
-    }
-
-    .email-form {
-      display: flex;
-      gap: 0;
-      max-width: 440px;
-      margin: 0 auto;
-    }
-
-    .email-form input {
-      flex: 1;
-      padding: 0.9rem 1.25rem;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      outline: none;
-      border: 1px solid rgba(184,146,74,0.3);
-      border-right: none;
-    }
-
-    .email-form input::placeholder { opacity: 0.5; }
-
-    .email-form button {
-      padding: 0.9rem 1.5rem;
-      background: var(--gold);
-      color: var(--ivory);
-      border: none;
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-
-    .email-form button:hover { background: #a07c3e; }
-
-    /* ─── BOOKING ───────────────────────────────── */
-    .booking {
-      padding: var(--section-pad);
-      background: var(--cream);
-    }
-
-    .booking-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-
-    .booking-tabs {
-      display: flex;
-      gap: 0;
-      margin: 2.5rem 0 2rem;
-      border-bottom: 1px solid rgba(184,146,74,0.2);
-    }
-
-    .booking-tab {
-      padding: 0.85rem 2rem;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      transition: all 0.2s;
-      background: none;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-    }
-
-    .booking-tab.active {
-      color: var(--forest);
-      border-bottom-color: var(--gold);
-    }
-
-    .booking-tab:hover { color: var(--forest); }
-
-    .booking-panel { display: none; }
-    .booking-panel.active { display: block; }
-
-    .good-to-know {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      background: var(--ivory);
-      border-left: 3px solid var(--gold);
-      font-size: 0.88rem;
-      color: var(--charcoal);
-    }
-
-    .good-to-know h3 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--forest);
-      margin-bottom: 0.75rem;
-    }
-
-    .good-to-know ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.4rem;
-    }
-
-    .good-to-know li {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-    }
-
-    .good-to-know li::before {
-      content: '·';
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    /* ─── FOOTER ────────────────────────────────── */
-    footer {
-      background: var(--charcoal);
-      color: var(--cream);
-      padding: 3rem clamp(1.5rem, 5vw, 4rem);
-    }
-
-    .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .footer-brand img {
-      height: 56px;
-      margin-bottom: 1rem;
-      opacity: 0.85;
-    }
-
-    .footer-tagline {
-      font-family: var(--font-display);
-      
-      font-size: 1rem;
-      opacity: 0.6;
-      margin-bottom: 1rem;
-    }
-
-    .footer-contact {
-      font-size: 0.82rem;
-      opacity: 0.5;
-    }
-
-    .footer-contact a:hover { opacity: 1; color: var(--gold); }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      text-align: right;
-    }
-
-    .footer-links a {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.5;
-      transition: opacity 0.2s, color 0.2s;
-    }
-
-    .footer-links a:hover { opacity: 1; color: var(--gold); }
-
-    .footer-bottom {
-      max-width: var(--max-w);
-      margin: 2rem auto 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.72rem;
-      opacity: 0.35;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .footer-fp4ever {
-      color: var(--gold);
-      opacity: 0.7;
-    }
-
-    /* ─── ANIMATIONS ────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ─── RESPONSIVE ────────────────────────────── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .stats-inner { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-links { text-align: left; }
-      .email-form { flex-direction: column; }
-      .email-form input { border-right: 1px solid rgba(184,146,74,0.3); }
-      .booking-tabs { overflow-x: auto; }
-    }
-
-    @media (max-width: 480px) {
-      .stats-inner { grid-template-columns: 1fr; }
-    }
-
-    /* ─── BOKUN WIDGET ──────────────────────────── */
-    .bokun-wrap {
-      min-height: 200px;
-      background: var(--ivory);
-    }
+    body { font-family: 'Ubuntu', sans-serif; color: #1c1c1c; }
+    .hero-bg { background: linear-gradient(135deg, #607466 0%, #4d5e52 100%); }
+    .section-sage { background: linear-gradient(135deg, #607466 0%, #4d5e52 100%); }
+    .card { background:white; border-radius:1rem; box-shadow:0 1px 3px rgba(0,0,0,.1); padding:2rem; transition:box-shadow .2s,transform .2s; }
+    .card:hover { box-shadow:0 4px 20px rgba(0,0,0,.12); transform:translateY(-2px); }
+    .btn-sage { background:#607466; color:white; padding:.75rem 2rem; border-radius:.5rem; font-weight:500; display:inline-block; text-decoration:none; transition:all .2s; }
+    .btn-sage:hover { background:#4d5e52; transform:translateY(-1px); }
+    .btn-white { background:white; color:#607466; padding:.75rem 2rem; border-radius:.5rem; font-weight:500; display:inline-block; text-decoration:none; transition:all .2s; }
+    .btn-white:hover { background:#f9fafb; transform:translateY(-1px); }
+    .btn-outline-white { border:2px solid white; color:white; padding:.75rem 2rem; border-radius:.5rem; font-weight:500; display:inline-block; text-decoration:none; transition:all .2s; }
+    .btn-outline-white:hover { background:rgba(255,255,255,.15); transform:translateY(-1px); }
+    .tab-btn { padding:.5rem 1.25rem; border-radius:9999px; font-weight:500; font-size:.875rem; cursor:pointer; border:none; background:transparent; color:#6b7280; transition:all .2s; }
+    .tab-btn.active { background:#607466; color:white; }
+    .check-item::before { content:'✓'; color:#607466; font-weight:700; margin-right:.5rem; }
+    .dot-item::before { content:'•'; color:#607466; font-weight:700; margin-right:.5rem; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(255,255,255,.95); backdrop-filter:blur(4px); border-bottom:1px solid #f3f4f6; transition:box-shadow .3s; }
+    nav.scrolled { box-shadow:0 1px 10px rgba(0,0,0,.08); }
+    .booking-panel { display:none; }
+    .booking-panel.active { display:block; }
+    .email-input { flex:1; padding:.75rem 1rem; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:white; border-radius:.5rem 0 0 .5rem; font-family:'Ubuntu',sans-serif; font-size:.9rem; outline:none; }
+    .email-input::placeholder { color:rgba(255,255,255,.6); }
+    .email-btn { padding:.75rem 1.5rem; background:#d6ce93; color:#1c1c1c; font-weight:600; font-size:.85rem; border:none; border-radius:0 .5rem .5rem 0; cursor:pointer; font-family:'Ubuntu',sans-serif; white-space:nowrap; transition:background .2s; }
+    .email-btn:hover { background:#c4ba7a; }
+    @media(max-width:768px){.nav-links{display:none!important;}.hero-flex{flex-direction:column!important;}}
   </style>
 </head>
 
-<body>
+<body class="bg-white">
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="/" class="nav-logo">
-      <img
-        src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png"
-        alt="Forest Park Picnics"
-        height="48"
-      />
-    </a>
-    <ul class="nav-links">
-      <li><a href="#experience">The Experience</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#book" class="btn-nav">Book Now</a></li>
-    </ul>
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/"><img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png" alt="Forest Park Picnics" class="h-10 w-auto" /></a>
+      <ul class="nav-links flex items-center gap-8 list-none">
+        <li><a href="#experience" class="text-sm font-medium text-gray-700 hover:text-sage-dark transition-colors no-underline">The Experience</a></li>
+        <li><a href="#how-it-works" class="text-sm font-medium text-gray-700 hover:text-sage-dark transition-colors no-underline">How It Works</a></li>
+        <li><a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-sage-dark transition-colors no-underline">Reviews</a></li>
+        <li><a href="#book" class="btn-sage text-sm py-2 px-5">Book Now</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <p class="hero-eyebrow">Forest Park · St. Louis</p>
-    <h1>The Easiest Date Night<br /><em>in St. Louis</em></h1>
-    <p class="hero-sub">Curated picnic dates in Forest Park. Gourmet meals from STL's best restaurants. Zero hassle. Pure romance.</p>
-    <div class="hero-cta">
-      <a href="#book" class="btn-primary">Book Your Picnic</a>
-      <a href="#experience" class="btn-secondary">See What's Inside</a>
+  <section class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white pt-20 pb-16 px-6 relative overflow-hidden">
+    <div class="absolute bottom-8 right-8 w-20 h-20 opacity-10">
+      <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" alt="" aria-hidden="true" class="w-full h-auto" />
     </div>
-    <p class="hero-meta">Wednesday – Saturday &nbsp;·&nbsp; April – October</p>
-    <img
-      src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png"
-      alt=""
-      class="hero-logo"
-      aria-hidden="true"
-    />
+    <p class="text-xs font-semibold tracking-widest uppercase opacity-75 mb-6">Forest Park · St. Louis</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 max-w-4xl">The Easiest Date Night<br/>in St. Louis</h1>
+    <p class="text-lg md:text-xl font-light opacity-90 max-w-2xl mb-10">Curated picnic dates in Forest Park. Gourmet meals from STL's best restaurants. Zero hassle. Pure romance.</p>
+    <div class="hero-flex flex gap-4 flex-wrap justify-center mb-12">
+      <a href="#book" class="btn-white">Book Your Picnic</a>
+      <a href="#experience" class="btn-outline-white">See What's Inside</a>
+    </div>
+    <p class="text-xs font-medium opacity-60 tracking-widest uppercase">Wednesday – Saturday &nbsp;·&nbsp; April – October</p>
   </section>
 
   <!-- STATS -->
-  <div class="stats">
-    <div class="stats-inner">
-      <div>
-        <span class="stat-num">2hrs</span>
-        <span class="stat-label">Your private picnic time</span>
+  <section class="section-sage py-12 px-6 text-white">
+    <div class="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
+      <div class="bg-white bg-opacity-10 rounded-2xl p-6">
+        <div class="text-4xl font-bold mb-1">2hrs</div>
+        <div class="text-sm opacity-70">Your private picnic time</div>
       </div>
-      <div>
-        <span class="stat-num">90%</span>
-        <span class="stat-label">Restaurant packaging eliminated</span>
+      <div class="bg-white bg-opacity-10 rounded-2xl p-6">
+        <div class="text-4xl font-bold mb-1">90%</div>
+        <div class="text-sm opacity-70">Restaurant packaging eliminated</div>
       </div>
-      <div>
-        <span class="stat-num">$5</span>
-        <span class="stat-label">Donated to Forest Park Forever</span>
+      <div class="bg-white bg-opacity-10 rounded-2xl p-6">
+        <div class="text-4xl font-bold mb-1">$5</div>
+        <div class="text-sm opacity-70">Donated to Forest Park Forever</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
-    <div class="experience-inner">
-      <p class="section-label">The Experience</p>
-      <h2 class="section-title">A three-course meal from four acclaimed local eateries, enjoyed in a beautiful spot in Forest Park.<br /><em style="font-family:var(--font-display);font-style:italic;color:var(--gold)">Just bring yourself.</em></h2>
-      <div class="experience-grid">
-        <div class="exp-card">
-          <div class="exp-num">01</div>
-          <h3>Three-Course Perfection</h3>
-          <p>Appetizers, shareable entrées, and frozen desserts from four rotating local restaurants. Our menu changes monthly, featuring acclaimed eateries from the Central West End and Grove neighborhoods.</p>
+  <section class="bg-white py-20 px-6" id="experience">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">The Experience</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-3 max-w-2xl leading-tight">A three-course meal from four acclaimed local eateries, enjoyed in a beautiful spot in Forest Park.</h2>
+      <p class="text-xl text-sage mb-12">Just bring yourself.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card">
+          <div class="text-3xl font-bold mb-3 text-beige">01</div>
+          <h3 class="text-xl font-bold mb-3">Three-Course Perfection</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Appetizers, shareable entrées, and frozen desserts from four rotating local restaurants. Our menu changes monthly, featuring acclaimed eateries from the Central West End and Grove neighborhoods.</p>
         </div>
-        <div class="exp-card">
-          <div class="exp-num">02</div>
-          <h3>Fully Stocked Baskets</h3>
-          <p>Blanket, cups, cutlery, napkins, corkscrew — everything's included. Food is packed fresh and temperature managed throughout your picnic.</p>
+        <div class="card">
+          <div class="text-3xl font-bold mb-3 text-beige">02</div>
+          <h3 class="text-xl font-bold mb-3">Fully Stocked Baskets</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Blanket, cups, cutlery, napkins, corkscrew — everything's included. Food is packed fresh and temperature managed throughout your picnic.</p>
         </div>
-        <div class="exp-card">
-          <div class="exp-num">03</div>
-          <h3>Two Scenic Locations</h3>
-          <p>Choose Art Hill (near the St. Louis Art Museum) or Pagoda Lake (by The Muny). Both offer stunning views and the perfect backdrop for your date.</p>
+        <div class="card">
+          <div class="text-3xl font-bold mb-3 text-beige">03</div>
+          <h3 class="text-xl font-bold mb-3">Two Scenic Locations</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Choose Art Hill (near the St. Louis Art Museum) or Pagoda Lake (by The Muny). Both offer stunning views and the perfect backdrop for your date.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRIVATE PICNIC SEO SECTION -->
-  <section class="picnic-section">
-    <div class="picnic-inner">
-      <div class="picnic-text">
-        <p class="section-label">St. Louis' Favorite Date</p>
-        <h2>Private Picnic Dates in Forest Park, St. Louis</h2>
-        <p>Forest Park is one of the largest urban parks in America — and one of the most romantic. We've taken the most beautiful setting in St. Louis and made it effortless.</p>
-        <p>No reservations to fight over. No parking stress. No dishes. Just you, your person, a fully stocked basket, and two hours in one of the most beautiful places in the city.</p>
-        <p>Every picnic comes with a 3-course meal from one of four rotating local restaurants — all from the Central West End and Grove neighborhoods, keeping your dollars right here in St. Louis.</p>
-        <a href="#book" class="btn-primary" style="margin-top:1rem;">Reserve Your Spot</a>
+  <section class="py-20 px-6" style="background:#efebce">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">St. Louis' Favorite Date</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">Private Picnic Dates in Forest Park, St. Louis</h2>
+        <p class="text-gray-600 leading-relaxed mb-4 text-sm">Forest Park is one of the largest urban parks in America — and one of the most romantic. We've taken the most beautiful setting in St. Louis and made it effortless.</p>
+        <p class="text-gray-600 leading-relaxed mb-4 text-sm">No reservations to fight over. No parking stress. No dishes. Just you, your person, a fully stocked basket, and two hours in one of the most beautiful places in the city.</p>
+        <p class="text-gray-600 leading-relaxed mb-8 text-sm">Every picnic comes with a 3-course meal from one of four rotating local restaurants — all from the Central West End and Grove neighborhoods, keeping your dollars right here in St. Louis.</p>
+        <a href="#book" class="btn-sage">Reserve Your Spot</a>
       </div>
-      <div class="picnic-image">
-        <img
-          src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png"
-          alt="Forest Park Picnics basket setup with branded bento boxes, cups, and picnic essentials in Forest Park St. Louis"
-          style="background:var(--cream); padding:2rem; object-fit:contain;"
-        />
+      <div class="flex justify-center">
+        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" alt="Forest Park Picnics basket setup in Forest Park St. Louis" class="w-56 h-auto opacity-70" />
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="how" id="how-it-works">
-    <div class="how-inner">
-      <p class="section-label">How It Works</p>
-      <h2 class="section-title" style="color:var(--cream);">Easiest. Date. Ever.</h2>
-      <div class="how-steps">
-        <div class="step">
-          <div class="step-num">Step 01</div>
-          <h3>Book Online</h3>
-          <p>Availability is limited, so book early and don't worry — you can cancel or reschedule for free up to 24 hours before, or if the weather becomes decidedly un-picnicky.</p>
+  <section class="bg-white py-20 px-6" id="how-it-works">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">How It Works</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12">Easiest. Date. Ever.</h2>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-sage mb-4" style="background:#efebce">1</div>
+          <h3 class="text-xl font-bold mb-3">Book Online</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Availability is limited, so book early. Don't worry — you can cancel or reschedule for free up to 24 hours before, or if the weather becomes decidedly un-picnicky. Choose Lunch (Art Hill) or Dinner (Pagoda Lake) below to see available dates.</p>
         </div>
-        <div class="step">
-          <div class="step-num">Step 02</div>
-          <h3>Meet & Grab</h3>
-          <p>Meet us at the designated pickup spot. We'll hand you a fully-stocked picnic basket and blanket with everything you need — just a few steps away from an idyllic spot.</p>
+        <div>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-sage mb-4" style="background:#efebce">2</div>
+          <h3 class="text-xl font-bold mb-3">Meet &amp; Grab</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Meet us at the designated pickup/dropoff spot. We'll hand you a fully-stocked picnic basket and blanket with everything you need — just a few steps away from an idyllic spot for your perfect picnic.</p>
         </div>
-        <div class="step">
-          <div class="step-num">Step 03</div>
-          <h3>Enjoy & Relax</h3>
-          <p>Find your ideal spot — sun, shade, whatever you prefer — and spend 2 hours enjoying a three-course meal in one of St. Louis's most beautiful settings. No noisy dining room, no hovering waitstaff. Just you two.</p>
+        <div>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-sage mb-4" style="background:#efebce">3</div>
+          <h3 class="text-xl font-bold mb-3">Enjoy &amp; Relax</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Find your ideal spot — sun, shade, whatever you prefer — and spend 2 hours enjoying a three-course meal in one of St. Louis's most beautiful settings. No noisy dining room, no hovering waitstaff. Just you two.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SCHEDULE -->
-  <section class="schedule" id="schedule">
-    <div class="schedule-inner">
-      <p class="section-label">Schedule & Availability</p>
-      <h2 class="section-title">Choose your time, choose your view.</h2>
-      <div class="schedule-grid">
-        <div class="schedule-card">
-          <h3>Art Hill</h3>
-          <p class="location-sub">Near the St. Louis Art Museum</p>
-          <div class="schedule-detail"><strong>Days:</strong> Wed – Sat</div>
-          <div class="schedule-detail"><strong>Time:</strong> 11:30am</div>
-          <div class="schedule-detail"><strong>Season:</strong> April – October</div>
+  <section class="py-20 px-6" style="background:#efebce" id="schedule">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">Schedule &amp; Availability</p>
+      <h2 class="text-4xl font-bold mb-10">Choose your time, choose your view.</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-1">Art Hill</h3>
+          <p class="text-xs text-gray-400 uppercase tracking-wide mb-4">Near the St. Louis Art Museum</p>
+          <p class="text-sm mb-1"><span class="text-gray-400 mr-2">Wed–Sat</span>at 11:30am</p>
+          <p class="text-sm font-medium text-sage">April–October</p>
         </div>
-        <div class="schedule-card">
-          <h3>Pagoda Lake</h3>
-          <p class="location-sub">By The Muny</p>
-          <div class="schedule-detail"><strong>Days:</strong> Wed – Sat</div>
-          <div class="schedule-detail"><strong>Time:</strong> 5:30pm</div>
-          <div class="schedule-detail"><strong>Season:</strong> May – September</div>
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-1">Pagoda Lake</h3>
+          <p class="text-xs text-gray-400 uppercase tracking-wide mb-4">By The Muny</p>
+          <p class="text-sm mb-1"><span class="text-gray-400 mr-2">Wed–Sat</span>at 5:30pm</p>
+          <p class="text-sm font-medium text-sage">May–September</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHAT'S INCLUDED -->
-  <section class="included">
-    <div class="included-inner">
-      <p class="section-label">What's Included</p>
-      <h2 class="section-title">Everything. Seriously.</h2>
-      <ul class="included-list">
-        <li>Three-course meal from 4 local eateries</li>
-        <li>Fully-stocked picnic basket</li>
-        <li>Blanket, cups, cutlery, corkscrew</li>
-        <li>2-hour private picnic time</li>
-        <li>$5 donation to Forest Park Forever</li>
-        <li>Free cancellation 24+ hours before</li>
-        <li>Temperature-managed food packaging</li>
-        <li>Choice of Art Hill or Pagoda Lake</li>
-      </ul>
+      <p class="text-sm text-gray-500 text-center">Free cancellation up to 24 hours before your picnic</p>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
-    <div class="testimonials-inner">
-      <p class="section-label">What Couples Are Saying</p>
-      <h2 class="section-title">Real experiences from real dates.</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>This was the most romantic date we've ever had. The food was incredible, the setup was perfect, and we didn't have to worry about a single thing. Worth every penny!</p>
-          <div class="testimonial-attr">Sarah &amp; James &nbsp;·&nbsp; Anniversary</div>
+  <section class="bg-white py-20 px-6" id="testimonials">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">What Couples Are Saying</p>
+      <h2 class="text-4xl font-bold mb-12">Real experiences from real dates.</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card">
+          <div class="mb-3 text-beige">★★★★★</div>
+          <p class="text-gray-700 leading-relaxed mb-4 italic text-sm">"This was the most romantic date we've ever had. The food was incredible, the setup was perfect, and we didn't have to worry about a single thing. Worth every penny!"</p>
+          <p class="text-xs font-semibold text-sage">Sarah &amp; James &nbsp;·&nbsp; Anniversary</p>
         </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>As tourists visiting St. Louis, this was the highlight of our trip. We got to taste food from multiple amazing local restaurants while enjoying the beautiful park. Highly recommend!</p>
-          <div class="testimonial-attr">Emily R. &nbsp;·&nbsp; Vacation</div>
+        <div class="card">
+          <div class="mb-3 text-beige">★★★★★</div>
+          <p class="text-gray-700 leading-relaxed mb-4 italic text-sm">"As tourists visiting St. Louis, this was the highlight of our trip. We got to taste food from multiple amazing local restaurants while enjoying the beautiful park. Highly recommend!"</p>
+          <p class="text-xs font-semibold text-sage">Emily R. &nbsp;·&nbsp; Vacation</p>
         </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>We've done a lot of dates, but this one stands out. The quality of the food, the thoughtful details, and the gorgeous location made it unforgettable. Already planning our next one!</p>
-          <div class="testimonial-attr">Michael &amp; Lisa &nbsp;·&nbsp; Date Night</div>
+        <div class="card">
+          <div class="mb-3 text-beige">★★★★★</div>
+          <p class="text-gray-700 leading-relaxed mb-4 italic text-sm">"We've done a lot of dates, but this one stands out. The quality of the food, the thoughtful details, and the gorgeous location made it unforgettable. Already planning our next one!"</p>
+          <p class="text-xs font-semibold text-sage">Michael &amp; Lisa &nbsp;·&nbsp; Date Night</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EMAIL SIGNUP -->
-  <section class="email-signup">
-    <div class="email-signup-inner">
-      <p class="section-label" style="color:var(--gold);">Stay in the Loop</p>
-      <h2>Heck yes I want emails from ForestParkPicnics.com</h2>
-      <p>New menus, availability alerts, and the occasional picnic love letter.</p>
-      <!-- Brevo/Sendinblue form — preserved from original -->
-      <form class="email-form" id="email-form">
-        <input type="email" placeholder="your@email.com" required />
-        <button type="submit">Subscribe</button>
+  <!-- EMAIL -->
+  <section class="section-sage py-20 px-6 text-white text-center">
+    <div class="max-w-xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3 opacity-75">Stay in the Loop</p>
+      <h2 class="text-3xl font-bold mb-3">Heck yes I want emails from ForestParkPicnics.com</h2>
+      <p class="opacity-70 mb-8 text-sm">New menus, availability alerts, and the occasional picnic love letter.</p>
+      <form id="email-form" class="flex max-w-md mx-auto">
+        <input type="email" placeholder="your@email.com" required class="email-input" />
+        <button type="submit" class="email-btn">SUBSCRIBE</button>
       </form>
     </div>
   </section>
 
   <!-- BOOKING -->
-  <section class="booking" id="book">
-    <div class="booking-inner">
-      <p class="section-label">Book Your Picnic</p>
-      <h2 class="section-title">Choose your location and pick a date.<br />Your perfect picnic awaits.</h2>
+  <section class="bg-white py-20 px-6" id="book">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3 text-sage">Book Your Picnic</p>
+      <h2 class="text-4xl font-bold mb-2">Choose your location and pick a date.</h2>
+      <p class="text-gray-400 mb-8">Your perfect picnic awaits.</p>
 
-      <div class="booking-tabs">
-        <button class="booking-tab active" onclick="switchTab('lunch', this)">Lunch — Art Hill</button>
-        <button class="booking-tab" onclick="switchTab('dinner', this)">Dinner — Pagoda Lake</button>
+      <div class="flex gap-2 mb-8 p-1 inline-flex rounded-full" style="background:#efebce">
+        <button class="tab-btn active" onclick="switchTab('lunch',this)">Lunch</button>
+        <button class="tab-btn" onclick="switchTab('dinner',this)">Dinner</button>
       </div>
 
       <div class="booking-panel active" id="panel-lunch">
-        <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:1.5rem;">Midday Picnic at Art Hill &nbsp;·&nbsp; Near the St. Louis Art Museum &nbsp;·&nbsp; Wed–Sat at 11:30am &nbsp;·&nbsp; April–October</p>
-        <!-- BOKUN WIDGET -->
-        <div class="bokun-wrap">
+        <p class="text-xs text-gray-400 mb-4">Midday Picnic at Art Hill &nbsp;·&nbsp; Near the St. Louis Art Museum &nbsp;·&nbsp; Wed–Sat at 11:30am &nbsp;·&nbsp; April–October</p>
+        <div class="min-h-[300px] bg-gray-50 rounded-2xl p-4">
           <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/2e3a19f9-d8dc-489d-bf79-c59ea4fcbbe3/experience-calendar/1036656"></div>
         </div>
       </div>
 
       <div class="booking-panel" id="panel-dinner">
-        <p style="font-size:0.85rem;color:var(--warm-gray);margin-bottom:1.5rem;">Evening Picnic at Pagoda Lake &nbsp;·&nbsp; By The Muny &nbsp;·&nbsp; Wed–Sat at 5:30pm &nbsp;·&nbsp; May–September</p>
-        <!-- BOKUN WIDGET — Dinner / Pagoda Lake -->
-        <div class="bokun-wrap">
+        <p class="text-xs text-gray-400 mb-4">Evening Picnic at Pagoda Lake &nbsp;·&nbsp; By The Muny &nbsp;·&nbsp; Wed–Sat at 5:30pm &nbsp;·&nbsp; May–September</p>
+        <div class="min-h-[300px] bg-gray-50 rounded-2xl p-4">
           <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/2e3a19f9-d8dc-489d-bf79-c59ea4fcbbe3/experience-calendar/1152332"></div>
         </div>
       </div>
 
-      <div class="good-to-know">
-        <h3>Good to Know</h3>
-        <ul>
-          <li>Availability is limited — book early</li>
-          <li>Free cancellation 24+ hours before</li>
-          <li>Operating Wed–Sat, April–October</li>
-          <li>Two scenic locations available</li>
-          <li>Menu rotates monthly</li>
-          <li>Perfect for dates &amp; special occasions</li>
-        </ul>
+      <div class="mt-6 pt-6 border-t border-gray-100">
+        <p class="text-sm text-gray-500 mb-2">What's Included</p>
+        <div class="grid md:grid-cols-2 gap-x-8 mb-6">
+          <p class="check-item text-sm text-gray-700">Three-course meal from 4 local eateries</p>
+          <p class="check-item text-sm text-gray-700">Fully-stocked picnic basket</p>
+          <p class="check-item text-sm text-gray-700">Blanket, cups, cutlery, corkscrew</p>
+          <p class="check-item text-sm text-gray-700">2-hour private picnic time</p>
+          <p class="check-item text-sm text-gray-700">$5 donation to Forest Park Forever</p>
+        </div>
+        <p class="text-sm text-gray-500 mt-4">
+          Want to treat someone to a picnic? <a href="https://www.tourcwe.com/giftcards" class="text-sage underline">Send a Gift Card</a>
+          &nbsp;·&nbsp;
+          Questions? Special occasion? <a href="mailto:hey@forestparkpicnics.com" class="text-sage underline">Get in Touch</a>
+        </p>
       </div>
-
-      <p style="margin-top:2rem;font-size:0.88rem;color:var(--warm-gray);">
-        Want to treat someone to a picnic?
-        <a href="https://www.tourcwe.com/giftcards" style="color:var(--gold);text-decoration:underline;">Send a Gift Card</a>
-        &nbsp;·&nbsp;
-        Questions?
-        <a href="mailto:hey@forestparkpicnics.com" style="color:var(--gold);text-decoration:underline;">Get in Touch</a>
-      </p>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img
-          src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png"
-          alt="Forest Park Picnics"
-        />
-        <p class="footer-tagline">Life is Short · Have a Picnic.</p>
-        <p class="footer-contact">
-          <a href="mailto:hey@forestparkpicnics.com">hey@forestparkpicnics.com</a>
-        </p>
+  <footer class="py-12 px-6" style="background:#1c1c1c;color:white;">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+      <div>
+        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" alt="Forest Park Picnics" class="h-14 w-auto mb-4" style="opacity:.85" />
+        <p class="text-sm italic mb-2" style="opacity:.5">Life is Short · Have a Picnic.</p>
+        <a href="mailto:hey@forestparkpicnics.com" class="text-sm transition-opacity no-underline" style="opacity:.5;color:white">hey@forestparkpicnics.com</a>
       </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#experience">The Experience</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#book">Book Now</a>
-        <a href="https://www.tourcwe.com/giftcards">Gift Cards</a>
-        <a href="https://www.instagram.com/forestparkpicnics">Instagram</a>
-        <a href="https://www.tourcwe.com">TourCWE</a>
+      <nav class="flex flex-col gap-3">
+        <a href="#experience" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">The Experience</a>
+        <a href="#how-it-works" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">How It Works</a>
+        <a href="#testimonials" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">Reviews</a>
+        <a href="#book" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">Book Now</a>
+        <a href="https://www.tourcwe.com/giftcards" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">Gift Cards</a>
+        <a href="https://www.instagram.com/forestparkpicnics" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">Instagram</a>
+        <a href="https://www.tourcwe.com" class="text-xs uppercase tracking-widest no-underline transition-opacity" style="opacity:.5;color:white">TourCWE</a>
       </nav>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Forest Park Picnics · <a href="https://www.forestparkpicnics.com" style="color:inherit;">forestparkpicnics.com</a></span>
-      <span class="footer-fp4ever">$5 from every booking goes to Forest Park Forever ♥</span>
+    <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-white border-opacity-10 flex flex-wrap justify-between gap-2 text-xs" style="opacity:.3">
+      <span>© 2026 Forest Park Picnics · <a href="https://forestparkpicnics.com" style="color:inherit">forestparkpicnics.com</a></span>
+      <span style="color:#d6ce93;opacity:.7">$5 from every booking goes to Forest Park Forever ♥</span>
     </div>
   </footer>
 
   <script>
-    // Nav scroll behavior
     const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Booking tab switcher
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
     function switchTab(tab, btn) {
-      document.querySelectorAll('.booking-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.booking-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('panel-' + tab).classList.add('active');
     }
-
-    // Email form (placeholder — wire to MailerLite or Brevo)
     document.getElementById('email-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = this.querySelector('input').value;
-      if (email) {
-        this.innerHTML = '<p style="color:var(--gold);font-family:var(--font-display);font-style:italic;font-size:1.1rem;">You\'re in. ✓</p>';
+      if (this.querySelector('input').value) {
+        this.innerHTML = '<p style="color:#d6ce93;font-size:1.1rem;">You\'re in. ✓</p>';
       }
     });
   </script>
