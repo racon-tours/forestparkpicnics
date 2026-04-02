@@ -87,8 +87,7 @@
     .tab-btn.active { background:#607466; color:white; }
     .check-item::before { content:'✓'; color:#607466; font-weight:700; margin-right:.5rem; }
     .dot-item::before { content:'•'; color:#607466; font-weight:700; margin-right:.5rem; }
-    nav { position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(255,255,255,.95); backdrop-filter:blur(4px); border-bottom:1px solid #f3f4f6; transition:box-shadow .3s; }
-    nav.scrolled { box-shadow:0 1px 10px rgba(0,0,0,.08); }
+    /* nav handled by header element with Tailwind classes */
     .booking-panel { display:none; }
     .booking-panel.active { display:block; }
     .email-input { flex:1; padding:.75rem 1rem; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:white; border-radius:.5rem 0 0 .5rem; font-family:'Ubuntu',sans-serif; font-size:.9rem; outline:none; }
@@ -102,31 +101,33 @@
 <body class="bg-white">
 
   <!-- NAV -->
-  <nav id="main-nav">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/"><img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png" alt="Forest Park Picnics" class="h-10 w-auto" /></a>
-      <ul class="nav-links flex items-center gap-8 list-none">
-        <li><a href="#experience" class="text-sm font-medium text-gray-700 hover:text-sage-dark transition-colors no-underline">The Experience</a></li>
-        <li><a href="#how-it-works" class="text-sm font-medium text-gray-700 hover:text-sage-dark transition-colors no-underline">How It Works</a></li>
-        <li><a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-sage-dark transition-colors no-underline">Reviews</a></li>
-        <li><a href="#book" class="btn-sage text-sm py-2 px-5">Book Now</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex-shrink-0">
+        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png" alt="Forest Park Picnics" class="h-12 w-auto block" />
+      </a>
+      <div class="flex items-center gap-8 ml-12">
+        <a href="#experience" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">The Experience</a>
+        <a href="#testimonials" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">Reviews</a>
+        <a href="#book" class="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity" style="background-color:#628395">Book Now</a>
+      </div>
+    </nav>
+  </header>
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white pt-32 pb-16 px-6 relative overflow-hidden">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
+    <div class="relative z-10 text-center text-white px-6 py-24 max-w-5xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">The Easiest Date Night<br/><span style="color:#D6CE93">in St. Louis</span></h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" style="color:#EFEBCE">Curated picnic dates in Forest Park. Gourmet meals from STL's best restaurants. Zero hassle. Pure romance.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <a href="#book" class="btn-white">Book Your Picnic</a>
+        <a href="#experience" class="btn-outline-white">See What's Inside</a>
+      </div>
+      <p class="text-sm font-medium opacity-60 tracking-widest uppercase">Wednesday - Saturday · April - October</p>
+    </div>
     <div class="absolute bottom-8 right-8 w-20 h-20 opacity-10">
       <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png" alt="" aria-hidden="true" class="w-full h-auto" />
     </div>
-    <p class="text-xs font-semibold tracking-widest uppercase opacity-75 mb-6">Forest Park · St. Louis</p>
-    <h1 class="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 max-w-4xl">The Easiest Date Night<br/>in St. Louis</h1>
-    <p class="text-lg md:text-xl font-light opacity-90 max-w-2xl mb-10">Curated picnic dates in Forest Park. Gourmet meals from STL's best restaurants. Zero hassle. Pure romance.</p>
-    <div class="hero-flex flex gap-4 flex-wrap justify-center mb-12">
-      <a href="#book" class="btn-white">Book Your Picnic</a>
-      <a href="#experience" class="btn-outline-white">See What's Inside</a>
-    </div>
-    <p class="text-xs font-medium opacity-60 tracking-widest uppercase">Wednesday – Saturday &nbsp;·&nbsp; April – October</p>
   </section>
 
   <!-- STATS -->
@@ -345,8 +346,7 @@
   </footer>
 
   <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    // Nav scroll handled by backdrop-blur on header
     function switchTab(tab, btn) {
       document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.booking-panel').forEach(p => p.classList.remove('active'));
