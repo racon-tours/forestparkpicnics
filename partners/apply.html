@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve Your Month | Forest Park Picnics Partner Application</title>
+  <meta name="description" content="Apply to become a Forest Park Picnics entrée partner. Reserve your month on our rotating menu." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://forestparkpicnics.com/partners/apply" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage:    '#607466',
+            steel:   '#628395',
+            beige:   '#D6CE93',
+            cream:   '#EFEBCE',
+            charcoal:'#1C1C1C',
+          },
+          fontFamily: { ubuntu: ['Ubuntu', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Ubuntu', sans-serif; }
+    body { background: #EFEBCE; color: #1C1C1C; }
+
+    .hero-bg { background: linear-gradient(135deg, #1c1c1c 0%, #607466 55%, #628395 100%); }
+
+    /* Form field styles */
+    .field-group { margin-bottom: 1.5rem; }
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #607466;
+      margin-bottom: 0.4rem;
+    }
+    label .optional {
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: #9ca3af;
+      font-size: 0.7rem;
+      margin-left: 0.3rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      background: white;
+      border: 1.5px solid #D6CE93;
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.9rem;
+      color: #1C1C1C;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+      appearance: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #628395;
+      box-shadow: 0 0 0 3px rgba(98,131,149,0.15);
+    }
+    textarea { resize: vertical; min-height: 100px; }
+
+    /* Checkbox / radio month grid */
+    .month-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .month-option {
+      position: relative;
+    }
+    .month-option input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+    }
+    .month-option label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0.25rem;
+      border: 1.5px solid #D6CE93;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #607466;
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin: 0;
+    }
+    .month-option input:checked + label {
+      background: #628395;
+      border-color: #628395;
+      color: white;
+    }
+    .month-option label:hover {
+      border-color: #628395;
+    }
+
+    /* Radio notice preference */
+    .radio-group { display: flex; gap: 1rem; }
+    .radio-option { position: relative; }
+    .radio-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .radio-option label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem;
+      border: 1.5px solid #D6CE93;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #607466;
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin: 0;
+    }
+    .radio-option input:checked + label {
+      background: #628395;
+      border-color: #628395;
+      color: white;
+    }
+
+    /* Section divider */
+    .form-section {
+      padding: 1.75rem 2rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      margin-bottom: 1rem;
+    }
+    .form-section h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #EFEBCE;
+    }
+
+    /* Submit button */
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: #628395;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+    .btn-submit:hover { background: #4d5e52; }
+    .btn-submit:active { transform: scale(0.99); }
+
+    /* Success state */
+    #success-message {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex-shrink-0">
+        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png"
+             alt="Forest Park Picnics" class="w-auto block" style="height:3rem;max-height:3rem;" />
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/partners" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">← Partner Hub</a>
+        <a href="/#book" class="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity" style="background-color:#628395">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-14 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:#D6CE93">Partner Application</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">Reserve Your Month</h1>
+      <p class="text-base" style="color:#EFEBCE">
+        You don't have to know what you'll put in our 5×7.5" box to get started.<br/>Just tell us who you are and when you'd like your spotlight.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="py-10 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Success Message (shown after submit) -->
+      <div id="success-message">
+        <div class="text-5xl mb-4">🧺</div>
+        <h2 class="text-2xl font-bold mb-3" style="color:#1C1C1C">You're on our radar!</h2>
+        <p class="text-gray-600 mb-6">Mike will be in touch within a day or two to confirm your month and drop off an empty box for your kitchen to test with.</p>
+        <p class="text-sm" style="color:#607466">Questions in the meantime? Call or text <a href="tel:3143235459" class="font-semibold underline">314-323-5459</a></p>
+      </div>
+
+      <form
+        name="fpp-partner-application"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        id="partner-form"
+      >
+        <!-- Netlify hidden fields -->
+        <input type="hidden" name="form-name" value="fpp-partner-application" />
+        <p style="display:none"><input name="bot-field" /></p>
+
+        <!-- YOUR ESTABLISHMENT -->
+        <div class="form-section">
+          <h2>Your Establishment</h2>
+
+          <div class="field-group">
+            <label for="establishment">Restaurant / Eatery Name</label>
+            <input type="text" id="establishment" name="establishment" required placeholder="e.g. Havana's Cuisine" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="field-group">
+              <label for="contact">Your Name</label>
+              <input type="text" id="contact" name="contact" required placeholder="First + Last" />
+            </div>
+            <div class="field-group">
+              <label for="title">Your Role <span class="optional">(optional)</span></label>
+              <input type="text" id="title" name="title" placeholder="e.g. Owner, Chef, GM" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="field-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@yourplace.com" />
+            </div>
+            <div class="field-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required placeholder="314-555-0000" />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Street address, St. Louis, MO" />
+          </div>
+        </div>
+
+        <!-- AVAILABILITY -->
+        <div class="form-section">
+          <h2>Availability</h2>
+          <p class="text-sm text-gray-500 mb-4 -mt-2">Select all months that could work. We'll confirm one with you directly. All service is Wed–Sat.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Lunch -->
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider mb-3" style="color:#628395">Lunch Entrée — 11am pickup</p>
+              <div class="month-grid">
+                <div class="month-option">
+                  <input type="checkbox" id="lunch_apr_may" name="lunch_months" value="APR+MAY" />
+                  <label for="lunch_apr_may">Apr+May</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="lunch_jun" name="lunch_months" value="JUN" />
+                  <label for="lunch_jun">Jun</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="lunch_jul" name="lunch_months" value="JUL" />
+                  <label for="lunch_jul">Jul</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="lunch_aug" name="lunch_months" value="AUG" />
+                  <label for="lunch_aug">Aug</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="lunch_sep" name="lunch_months" value="SEP" />
+                  <label for="lunch_sep">Sep</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="lunch_oct" name="lunch_months" value="OCT" />
+                  <label for="lunch_oct">Oct</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dinner -->
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider mb-3" style="color:#628395">Dinner Entrée — 5pm pickup</p>
+              <div class="month-grid">
+                <div class="month-option">
+                  <input type="checkbox" id="dinner_apr_may" name="dinner_months" value="APR+MAY" />
+                  <label for="dinner_apr_may">Apr+May</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="dinner_jun" name="dinner_months" value="JUN" />
+                  <label for="dinner_jun">Jun</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="dinner_jul" name="dinner_months" value="JUL" />
+                  <label for="dinner_jul">Jul</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="dinner_aug" name="dinner_months" value="AUG" />
+                  <label for="dinner_aug">Aug</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="dinner_sep" name="dinner_months" value="SEP" />
+                  <label for="dinner_sep">Sep</label>
+                </div>
+                <div class="month-option">
+                  <input type="checkbox" id="dinner_oct" name="dinner_months" value="OCT" />
+                  <label for="dinner_oct">Oct</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORDER NOTICE -->
+        <div class="form-section">
+          <h2>Order Notice Preference</h2>
+          <p class="text-sm text-gray-500 mb-4 -mt-2">We give 3 hours advance notice of exact order quantity. How would you like to receive it?</p>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="notice_text" name="order_notice" value="Text" />
+              <label for="notice_text">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                Text
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="notice_email" name="order_notice" value="Email" />
+              <label for="notice_email">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Email
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="notice_both" name="order_notice" value="Both" />
+              <label for="notice_both">Both</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- YOUR DISH -->
+        <div class="form-section">
+          <h2>Your Dish <span style="font-weight:400;color:#9ca3af;font-size:0.65rem;letter-spacing:0;text-transform:none;"> — optional, you can figure this out later</span></h2>
+
+          <div class="field-group">
+            <label for="dish">Tell us about your dish <span class="optional">ingredients, inspiration, what makes it special</span></label>
+            <textarea id="dish" name="dish" placeholder="Don't overthink it — even a rough idea helps us get excited. You'll have time to refine before your month."></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="cost">Cost per box <span class="optional">optional — we can figure this out together</span></label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input type="text" id="cost" name="cost_per_box" placeholder="0.00" style="padding-left:1.75rem;width:10rem;" />
+            </div>
+            <p class="text-xs text-gray-400 mt-1">Payment by check upon pickup.</p>
+          </div>
+        </div>
+
+        <!-- ANYTHING ELSE -->
+        <div class="form-section">
+          <h2>Anything else?</h2>
+          <div class="field-group" style="margin-bottom:0">
+            <textarea id="notes" name="notes" placeholder="Questions, special circumstances, ideas — whatever's on your mind." style="min-height:80px;"></textarea>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="mt-6">
+          <button type="submit" class="btn-submit">
+            Reserve My Month →
+          </button>
+          <p class="text-center text-xs text-gray-400 mt-3">
+            We'll follow up within 1–2 business days to confirm your month and drop off a test box.
+            <br/>Questions first? Call Mike at <a href="tel:3143235459" class="underline">314-323-5459</a>
+          </p>
+          <p class="text-center text-xs mt-3" style="color:#9ca3af">
+            Prefer a signed document?
+            <a href="/partners/agreement.pdf" download="FPP_Partner_Agreement.pdf" class="underline hover:opacity-75" style="color:#628395">Download the partner agreement instead.</a>
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 px-6 mt-6" style="background:#1c1c1c;">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4" style="color:#D6CE93">Forest Park Picnics</h3>
+          <p class="text-sm" style="color:#EFEBCE">Zero-hassle, curated picnic experiences featuring food from iconic St. Louis eateries.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4" style="color:#D6CE93">Partner Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/partners" class="hover:opacity-70 transition-opacity" style="color:#EFEBCE">Partner Hub</a></li>
+            <li><a href="/partners/design-guide" class="hover:opacity-70 transition-opacity" style="color:#EFEBCE">Entrée Box Design Guide</a></li>
+            <li><a href="/partners/operating-guide" class="hover:opacity-70 transition-opacity" style="color:#EFEBCE">Partner Operating Guide</a></li>
+            <li><a href="/partners/agreement.pdf" download class="hover:opacity-70 transition-opacity" style="color:#EFEBCE">Download Agreement (PDF)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4" style="color:#D6CE93">Contact</h4>
+          <p class="text-sm mb-2" style="color:#EFEBCE">Part of TourCWE</p>
+          <a href="mailto:mike@tourcwe.com" class="text-sm hover:opacity-70 transition-opacity block mb-1" style="color:#EFEBCE">mike@tourcwe.com</a>
+          <a href="tel:3143235459" class="text-sm hover:opacity-70 transition-opacity block" style="color:#EFEBCE">314-323-5459</a>
+        </div>
+      </div>
+      <div class="pt-8 border-t text-center text-sm" style="border-color:rgba(255,255,255,0.1);color:#EFEBCE;opacity:0.5">
+        <p>© 2026 Forest Park Picnics. Supporting Forest Park Forever with every picnic.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Handle Netlify form success redirect
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true') {
+      document.getElementById('partner-form').style.display = 'none';
+      document.getElementById('success-message').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    // Add ?success=true after Netlify processes
+    document.getElementById('partner-form').addEventListener('submit', function(e) {
+      // Netlify handles the actual submission — this just sets up the redirect
+      const form = this;
+      const action = window.location.pathname + '?success=true';
+      if (!form.getAttribute('action')) {
+        form.setAttribute('action', action);
+      }
+    });
+  </script>
+
+</body>
+</html>
