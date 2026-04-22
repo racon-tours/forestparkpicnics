@@ -1,14 +1,104 @@
-exports.handler = async function(event) {
-  if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method Not Allowed' };
-  let email;
-  try { ({ email } = JSON.parse(event.body)); } catch { return { statusCode: 400, body: 'Bad request' }; }
-  if (!email) return { statusCode: 400, body: 'Invalid email' };
-  const r = await fetch('https://connect.mailerlite.com/api/subscribers', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNWM0ZjMzNTViYjFhYTEwN2MzNzU3ZGY5NjFiNTY4ZGRlZTM1NzAzOGVmODExNjRlYmI3NzU0ZDViMjgzNDg1NDc0ODJjYmZhYjA0YjUwOTkiLCJpYXQiOjE3NzYyNzU3MTQuODIyOTk0LCJuYmYiOjE3NzYyNzU3MTQuODIyOTk4LCJleHAiOjQ5MzE5NDkzMTQuODE4NjEsInN1YiI6IjIyNTU4MTMiLCJzY29wZXMiOltdfQ.q9whN0EiPYi6NEqDSVaYRXXIvv-ZUn2ajT8-iOETv16Nv5nqhoM9-ISfwfa_pGQbHwKSit27uA6LrjexbBCJHGmGMl9-5s9oq2sXnaDbMiunxN22hDV3Uy0hgt4xyDI0WZ2BpsqvPPHhw7cK_0dZ5yxNoVwZZJu7wknWjrS0N5h1sXdm7uGi-ra06xrUBr89D4DlxbiFTdT_JdRkIp_IwRbwSYM3lrrqpZ_iM3JjFeBKa7lS1djQD0lgk6WOCqd5Ki78lerPB1Gtb20CNbXQSIOA5wpsDcKuoGuIAm0M2qRw-qFslkRP-D2iR-PVIcfAQrzxvgMAgnXX1e0l-n9l7VhbBgzhd2V_MgrfgwvBmcFPDaLO9BUJHq2Ib14Vitl4zi7NgmA_8mFiNFO8f9sqIcMB9YJ7FIiqYWhAfoUlg2BLX2aWL7eY9FivAEv1pQn5kupOPaiU2yLjS0X9xEDzF9EyafCggy95rOTQljMu0_rW9EdV5tpbS6PKbZ48c2hiTGuWFDj5vCNlwjvrZCBlWdgQ93yOK6dGCSVN71ztWgK59emn10IEMpMz4JHChSwbaHifnvfbrtDYCsYC1SmXpOCdNsHiJ5B-cZl-8u-CcylVzsTqZqu_TwkzjXNbxrtqL0H5bdWPOoYJJKjvu_pPN6aRQlgHwDPc2DoA5imtJaY' },
-    body: JSON.stringify({ email, groups: ['183608949676705180'] })
-  });
-  if (r.status === 200 || r.status === 201) return { statusCode: 200, body: JSON.stringify({ success: true }) };
-  if (r.status === 409) return { statusCode: 409, body: JSON.stringify({ already: true }) };
-  return { statusCode: 500, body: 'Error' };
+// Netlify Function: /.netlify/functions/subscribe
+// Proxies form submissions to MailerLite (double opt-in flow).
+// API key + group ID read from Netlify env vars (never exposed client-side).
+
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': 'https://forestparkpicnics.com',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
+exports.handler = async function (event) {
+  // Preflight
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 204, headers: CORS_HEADERS, body: '' };
+  }
+
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, headers: CORS_HEADERS, body: 'Method Not Allowed' };
+  }
+
+  const apiKey = process.env.MAILERLITE_API_KEY;
+  const groupId = process.env.MAILERLITE_GROUP_ID;
+  if (!apiKey || !groupId) {
+    console.error('Missing MAILERLITE_API_KEY or MAILERLITE_GROUP_ID env var.');
+    return {
+      statusCode: 500,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Subscription temporarily unavailable' }),
+    };
+  }
+
+  let email, source;
+  try {
+    ({ email, source } = JSON.parse(event.body || '{}'));
+  } catch {
+    return {
+      statusCode: 400,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Invalid request body' }),
+    };
+  }
+
+  // Basic email shape validation — defense in depth, real check is HTML5 + MailerLite
+  if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return {
+      statusCode: 400,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Please enter a valid email address' }),
+    };
+  }
+
+  try {
+    // status: 'unconfirmed' so MailerLite treats this as requiring confirmation.
+    // Custom field `source` lets us track which form it came from (footer vs popup).
+    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        email,
+        groups: [groupId],
+        status: 'unconfirmed',
+        fields: source ? { source } : undefined,
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    // 200/201 = created or already present (MailerLite upserts). Treat both as success.
+    if (res.status === 200 || res.status === 201) {
+      return {
+        statusCode: 200,
+        headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ success: true, status: data?.data?.status || 'unconfirmed' }),
+      };
+    }
+
+    // 422 = validation error (usually already-active subscriber in a different state)
+    if (res.status === 422) {
+      return {
+        statusCode: 200,
+        headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ success: true, already: true }),
+      };
+    }
+
+    console.error('MailerLite error', res.status, data);
+    return {
+      statusCode: 502,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Subscription service error. Please try again.' }),
+    };
+  } catch (err) {
+    console.error('Subscribe function error:', err);
+    return {
+      statusCode: 500,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Something went wrong. Please try again.' }),
+    };
+  }
 };
