@@ -62,6 +62,7 @@ exports.handler = async function (event) {
       body: JSON.stringify({
         email,
         groups: [groupId],
+        status: 'unconfirmed',
         fields: source ? { source } : undefined,
       }),
     });
