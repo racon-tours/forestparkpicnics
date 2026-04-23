@@ -1,0 +1,6 @@
+
+# Backups and noise
+.fpp-backups/
+.DS_Store
+node_modules/
+.netlify/
