@@ -50,16 +50,10 @@
     .fpp-error-msg { color:#b33a3a; font-size:.875rem; margin-top:8px; display:none; }
     .fpp-error-msg.active { display:block; }
     .fpp-form-hidden { display:none; }
-
-    /* Accessibility: skip-to-content link (visible only when focused) */
-    .skip-to-main { position:absolute; top:-100px; left:8px; background:#1c1c1c; color:#efebce; padding:.75rem 1.25rem; border-radius:.5rem; font-weight:600; font-family:'Ubuntu',sans-serif; z-index:9999; text-decoration:none; transition:top .15s ease; }
-    .skip-to-main:focus { top:8px; outline:3px solid #d6ce93; outline-offset:2px; }
   </style>
 </head>
 
 <body class="bg-white">
-  <a href="#main-content" class="skip-to-main">Skip to main content</a>
-
 
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -74,8 +68,6 @@
       </div>
     </nav>
   </header>
-
-  <main id="main-content">
 
   <!-- HERO -->
   <section class="hero-bg pt-32 pb-20 px-6 text-center">
@@ -169,34 +161,10 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="hero-bg py-20 px-6 text-center">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-4">Ready to reserve your month?</h2>
-      <p class="mb-8 text-lg" style="color:#EFEBCE">
-        You don't have to know what you'll put in our 5×7.5" box to get started.
-      </p>
-      <a href="/partners/apply"
-         class="inline-block px-10 py-4 rounded-full font-bold text-base hover:opacity-90 transition-opacity"
-         style="background-color:#D6CE93; color:#1C1C1C">
-        Reserve Your Month
-      </a>
-      <p class="mt-8 text-sm" style="color:#D6CE93">
-        Questions? Call or text Mike at
-        <a href="tel:3143123549" class="underline hover:opacity-75" style="color:#D6CE93">314-312-3549</a>
-        &nbsp;·&nbsp;
-        <a href="mailto:mike@tourcwe.com" class="underline hover:opacity-75" style="color:#D6CE93">mike@tourcwe.com</a>
-      </p>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="py-20 px-6" style="background:#EFEBCE">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-4" style="color:#1C1C1C">Frequently Asked Questions</h2>
-      <p class="text-center text-sm mb-12 text-gray-600">
-        Not ready to commit? <a href="#stay-in-touch" class="font-semibold underline hover:opacity-75" style="color:#628395">Get notified when slots open &rarr;</a>
-      </p>
+      <h2 class="text-3xl font-bold text-center mb-12" style="color:#1C1C1C">Frequently Asked Questions</h2>
 
       <div class="space-y-4">
 
@@ -304,10 +272,28 @@
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="hero-bg py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to reserve your month?</h2>
+      <p class="mb-8 text-lg" style="color:#EFEBCE">
+        You don't have to know what you'll put in our 5×7.5" box to get started.
+      </p>
+      <a href="/partners/apply"
+         class="inline-block px-10 py-4 rounded-full font-bold text-base hover:opacity-90 transition-opacity"
+         style="background-color:#D6CE93; color:#1C1C1C">
+        Reserve Your Month
+      </a>
+      <p class="mt-8 text-sm" style="color:#D6CE93">
+        Questions? Call or text Mike at
+        <a href="tel:3143123549" class="underline hover:opacity-75" style="color:#D6CE93">314-312-3549</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:mike@tourcwe.com" class="underline hover:opacity-75" style="color:#D6CE93">mike@tourcwe.com</a>
+      </p>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  </main>
-
   <footer class="py-12 px-6" style="background:#1c1c1c;">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -329,11 +315,13 @@
           <h4 class="font-semibold mb-4" style="color:#D6CE93">Contact</h4>
           <p class="text-sm mb-2" style="color:#EFEBCE">Part of TourCWE</p>
           <a href="mailto:hey@forestparkpicnics.com" class="text-sm hover:opacity-70 transition-opacity block mb-2" style="color:#EFEBCE">hey@forestparkpicnics.com</a>
+          <div class="mt-4">
+            <a href="https://forestparkpicnics.com" class="text-sm hover:opacity-70 transition-opacity" style="color:#628395">forestparkpicnics.com</a>
+          </div>
         </div>
       </div>
       <div class="pt-8 border-t text-center text-sm" style="border-color:rgba(255,255,255,0.1);color:#EFEBCE;opacity:0.5">
         <p>© 2026 Forest Park Picnics. Supporting Forest Park Forever with every picnic.</p>
-        <p class="mt-2"><a href="/accessibility" class="hover:opacity-70 transition-opacity underline" style="color:#EFEBCE">Accessibility</a></p>
       </div>
     </div>
   </footer>

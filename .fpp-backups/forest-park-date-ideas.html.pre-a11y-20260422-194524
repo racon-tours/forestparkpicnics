@@ -70,15 +70,9 @@
   <style>
     body { font-family: 'Ubuntu', sans-serif; }
     .hero-bg { background: linear-gradient(135deg, #1c1c1c 0%, #607466 50%, #628395 100%); }
-
-    /* Accessibility: skip-to-content link (visible only when focused) */
-    .skip-to-main { position:absolute; top:-100px; left:8px; background:#1c1c1c; color:#efebce; padding:.75rem 1.25rem; border-radius:.5rem; font-weight:600; font-family:'Ubuntu',sans-serif; z-index:9999; text-decoration:none; transition:top .15s ease; }
-    .skip-to-main:focus { top:8px; outline:3px solid #d6ce93; outline-offset:2px; }
   </style>
 </head>
 <body class="bg-cream text-charcoal">
-  <a href="#main-content" class="skip-to-main">Skip to main content</a>
-
 
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -94,8 +88,6 @@
       </div>
     </nav>
   </header>
-
-  <main id="main-content">
 
   <!-- HERO: two-column on desktop, stacked on mobile -->
   <section class="relative hero-bg pt-20 pb-12 md:pb-20 overflow-hidden">
@@ -257,8 +249,6 @@
   </section>
 
   <!-- FOOTER -->
-  </main>
-
   <footer class="py-12 px-6" style="background:#1c1c1c;">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -282,7 +272,6 @@
         </div>
       </div>
       <p class="text-center text-xs" style="color:#EFEBCE;opacity:0.6">&copy; 2026 Forest Park Picnics. Supporting Forest Park Forever with every picnic.</p>
-        <p class="mt-2"><a href="/accessibility" class="hover:opacity-70 transition-opacity underline" style="color:#EFEBCE">Accessibility</a></p>
     </div>
   </footer>
 

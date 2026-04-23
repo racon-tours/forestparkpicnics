@@ -111,16 +111,10 @@
     .fpp-form-hidden { display: none; }
     @keyframes fppFadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes fppPopIn { from { opacity: 0; transform: scale(.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-
-    /* Accessibility: skip-to-content link (visible only when focused) */
-    .skip-to-main { position:absolute; top:-100px; left:8px; background:#1c1c1c; color:#efebce; padding:.75rem 1.25rem; border-radius:.5rem; font-weight:600; font-family:'Ubuntu',sans-serif; z-index:9999; text-decoration:none; transition:top .15s ease; }
-    .skip-to-main:focus { top:8px; outline:3px solid #d6ce93; outline-offset:2px; }
   </style>
 </head>
 
-<body class="bg-white">
-  <a href="#main-content" class="skip-to-main">Skip to main content</a>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHFMCN2S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<body class="bg-white"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHFMCN2S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -135,8 +129,6 @@
       </div>
     </nav>
   </header>
-
-  <main id="main-content">
 
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
@@ -374,30 +366,7 @@
     </div>
   </section>
 
-  <!-- FOOTER OPT-IN BAND -->
-  <section class="section-sage py-16 px-6 text-center" id="signup">
-    <div class="max-w-2xl mx-auto">
-      <p class="text-xs font-semibold uppercase tracking-widest mb-3 opacity-80" style="color:#D6CE93">Stay in the Loop</p>
-      <h2 class="fpp-display text-4xl md:text-5xl mb-4" style="color:#efebce;">Picnic Perks, Straight to Your Inbox</h2>
-      <p class="mb-8 text-base md:text-lg opacity-85" style="color:#EFEBCE">Monthly menus, fresh availability, and a <strong>10% off code</strong> just for joining.</p>
-      <div id="fpp-footer-form" class="max-w-md mx-auto">
-        <div class="flex flex-col sm:flex-row gap-3">
-          <input type="email" id="fpp-footer-email" class="fpp-optin-input flex-1 px-4 py-3 rounded-md" placeholder="your@email.com" autocomplete="email" required />
-          <button type="button" id="fpp-footer-submit" class="fpp-optin-btn px-6 py-3 rounded-md whitespace-nowrap">SEND ME THE CODE</button>
-        </div>
-        <p id="fpp-footer-error" class="fpp-error-msg"></p>
-        <p class="mt-3 text-xs opacity-60" style="color:#EFEBCE">No spam. Unsubscribe anytime.</p>
-      </div>
-      <div id="fpp-footer-success" class="fpp-form-hidden max-w-md mx-auto">
-        <p class="text-xl mb-2" style="color:#efebce;">Check your inbox &#10003;</p>
-        <p class="text-sm opacity-75" style="color:#EFEBCE">We sent you a confirmation email. Click the link inside and your code is on the way.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
-  </main>
-
   <footer class="py-12 px-6" style="background:#1c1c1c;">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -418,181 +387,58 @@
           <h4 class="font-semibold mb-4" style="color:#D6CE93">Contact</h4>
           <p class="text-sm mb-2" style="color:#EFEBCE">Part of TourCWE</p>
           <a href="mailto:hey@forestparkpicnics.com" class="text-sm hover:opacity-70 transition-opacity block mb-2" style="color:#EFEBCE">hey@forestparkpicnics.com</a>
+          <div class="mt-4">
+            <a href="https://forestparkpicnics.com" class="text-sm hover:opacity-70 transition-opacity" style="color:#628395">forestparkpicnics.com</a>
+          </div>
         </div>
       </div>
       <div class="pt-8 border-t text-center text-sm" style="border-color:rgba(255,255,255,0.1);color:#EFEBCE;opacity:0.5">
         <p>© 2026 Forest Park Picnics. Supporting Forest Park Forever with every picnic.</p>
-        <p class="mt-2"><a href="/accessibility" class="hover:opacity-70 transition-opacity underline" style="color:#EFEBCE">Accessibility</a></p>
       </div>
     </div>
   </footer>
 
   <script>
     function switchTab(tab, btn) {
+      // Hide all panels and deactivate all buttons
       document.querySelectorAll('.booking-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      // Show selected panel and activate button
       document.getElementById('panel-' + tab).classList.add('active');
       btn.classList.add('active');
     }
 
-    // ===== FPP Opt-In (footer form + exit-intent popup) =====
-    (function() {
-      const POPUP_SESSION_KEY = 'fpp_popup_seen_v1';
-      const POPUP_SUPPRESS_KEY = 'fpp_popup_suppressed_v1';
-
-      async function submitEmail(email, source, errorEl) {
-        if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('active'); }
-        try {
-          const res = await fetch('/.netlify/functions/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, source: source })
-          });
-          const data = await res.json().catch(() => ({}));
-          if (res.ok && data.success) return true;
-          throw new Error(data.error || 'Something went wrong. Please try again.');
-        } catch (err) {
-          if (errorEl) {
-            errorEl.textContent = err.message || 'Something went wrong. Please try again.';
-            errorEl.classList.add('active');
-          }
-          return false;
+    function mlSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('ml-email').value;
+      const msg = document.getElementById('ml-msg');
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'JOINING...';
+      fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify({ email })
+      })
+      .then(r => {
+        msg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'SUBSCRIBE';
+        if (r.status === 200) {
+          msg.textContent = "You're in! Watch your inbox.";
+        } else if (r.status === 409) {
+          msg.textContent = "You're already on the list!";
+        } else {
+          msg.textContent = "Something went wrong. Try again or email us.";
         }
-      }
-
-      // --- Footer form ---
-      const footerForm = document.getElementById('fpp-footer-form');
-      const footerEmail = document.getElementById('fpp-footer-email');
-      const footerSubmit = document.getElementById('fpp-footer-submit');
-      const footerError = document.getElementById('fpp-footer-error');
-      const footerSuccess = document.getElementById('fpp-footer-success');
-
-      if (footerSubmit) {
-        const handleFooterSubmit = async () => {
-          const email = (footerEmail.value || '').trim();
-          if (!email) {
-            footerError.textContent = 'Please enter an email address';
-            footerError.classList.add('active');
-            footerEmail.focus();
-            return;
-          }
-          footerSubmit.disabled = true;
-          const originalText = footerSubmit.textContent;
-          footerSubmit.textContent = 'SENDING...';
-          const ok = await submitEmail(email, 'footer', footerError);
-          footerSubmit.disabled = false;
-          footerSubmit.textContent = originalText;
-          if (ok) {
-            footerForm.classList.add('fpp-form-hidden');
-            footerSuccess.classList.remove('fpp-form-hidden');
-          }
-        };
-        footerSubmit.addEventListener('click', handleFooterSubmit);
-        footerEmail.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') { e.preventDefault(); handleFooterSubmit(); }
-        });
-      }
-
-      // --- Exit-intent popup ---
-      const popup = document.getElementById('fpp-popup');
-      if (!popup) return;
-
-      const popupFormWrap = document.getElementById('fpp-popup-form-wrap');
-      const popupEmail = document.getElementById('fpp-popup-email');
-      const popupSubmit = document.getElementById('fpp-popup-submit');
-      const popupError = document.getElementById('fpp-popup-error');
-      const popupSuccess = document.getElementById('fpp-popup-success');
-      const popupClose = document.getElementById('fpp-popup-close');
-      const popupDismiss = document.getElementById('fpp-popup-dismiss');
-      const popupCloseSuccess = document.getElementById('fpp-popup-close-success');
-
-      function showPopup() {
-        if (sessionStorage.getItem(POPUP_SESSION_KEY)) return;
-        try { if (localStorage.getItem(POPUP_SUPPRESS_KEY)) return; } catch(e) {}
-        popup.classList.add('active');
-        try { sessionStorage.setItem(POPUP_SESSION_KEY, '1'); } catch(e) {}
-        document.body.style.overflow = 'hidden';
-      }
-
-      function hidePopup() {
-        popup.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      let exitBound = false;
-      function bindExitIntent() {
-        if (exitBound) return;
-        exitBound = true;
-        document.addEventListener('mouseleave', (e) => {
-          if (e.clientY <= 10) showPopup();
-        });
-      }
-
-      // Engagement timer: show after 45s if user hasn't left
-      setTimeout(() => showPopup(), 45000);
-      // Exit-intent binding after page is warm
-      setTimeout(bindExitIntent, 5000);
-
-      popupClose.addEventListener('click', hidePopup);
-      popupDismiss.addEventListener('click', () => {
-        try { localStorage.setItem(POPUP_SUPPRESS_KEY, '1'); } catch(e) {}
-        hidePopup();
+      })
+      .catch(() => {
+        msg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'SUBSCRIBE';
+        msg.textContent = "Something went wrong. Try again or email us.";
       });
-      if (popupCloseSuccess) popupCloseSuccess.addEventListener('click', hidePopup);
-      popup.addEventListener('click', (e) => { if (e.target === popup) hidePopup(); });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && popup.classList.contains('active')) hidePopup();
-      });
-
-      const handlePopupSubmit = async () => {
-        const email = (popupEmail.value || '').trim();
-        if (!email) {
-          popupError.textContent = 'Please enter an email address';
-          popupError.classList.add('active');
-          popupEmail.focus();
-          return;
-        }
-        popupSubmit.disabled = true;
-        const originalText = popupSubmit.textContent;
-        popupSubmit.textContent = 'SENDING...';
-        const ok = await submitEmail(email, 'popup', popupError);
-        popupSubmit.disabled = false;
-        popupSubmit.textContent = originalText;
-        if (ok) {
-          popupFormWrap.classList.add('fpp-form-hidden');
-          popupSuccess.classList.remove('fpp-form-hidden');
-        }
-      };
-      popupSubmit.addEventListener('click', handlePopupSubmit);
-      popupEmail.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') { e.preventDefault(); handlePopupSubmit(); }
-      });
-    })();
+    }
   </script>
-  <!-- EXIT-INTENT POPUP -->
-  <div id="fpp-popup" class="fpp-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="fpp-popup-title">
-    <div class="fpp-popup-card">
-      <button type="button" class="fpp-popup-close" id="fpp-popup-close" aria-label="Close">&times;</button>
-      <div id="fpp-popup-form-wrap">
-        <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:#607466;">Before you go...</p>
-        <h3 id="fpp-popup-title" class="fpp-display text-3xl md:text-4xl mb-3" style="color:#1c1c1c;">10% Off Your First Picnic</h3>
-        <p class="text-sm mb-5" style="color:#1c1c1c;">Join our email list and we&rsquo;ll send you a <strong>10% off code</strong> &mdash; plus monthly menu updates from St. Louis&rsquo;s best eateries.</p>
-        <div class="flex flex-col gap-3">
-          <input type="email" id="fpp-popup-email" class="fpp-optin-input px-4 py-3 rounded-md" placeholder="your@email.com" autocomplete="email" required />
-          <button type="button" id="fpp-popup-submit" class="fpp-optin-btn px-6 py-3 rounded-md">SEND ME THE CODE</button>
-        </div>
-        <p id="fpp-popup-error" class="fpp-error-msg"></p>
-        <div class="mt-4 text-center">
-          <button type="button" class="fpp-dismiss-link" id="fpp-popup-dismiss">No thanks, I don&rsquo;t want 10% off</button>
-        </div>
-      </div>
-      <div id="fpp-popup-success" class="fpp-form-hidden text-center">
-        <p class="fpp-display text-3xl mb-3" style="color:#1c1c1c;">Check your inbox &#10003;</p>
-        <p class="text-sm mb-5" style="color:#1c1c1c;">We sent you a confirmation email. Click the link inside and your code is on the way.</p>
-        <button type="button" class="fpp-optin-btn px-6 py-3 rounded-md" id="fpp-popup-close-success">GOT IT</button>
-      </div>
-    </div>
-  </div>
-
 </body>
 </html>

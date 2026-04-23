@@ -4,57 +4,33 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-MHFMCN2S");</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>You're In! | Forest Park Picnics</title>
-  <meta name="description" content="Thanks for confirming. We'll be in touch." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://forestparkpicnics.com/thanks" />
-
+  <title>Accessibility | Forest Park Picnics</title>
+  <meta name="description" content="Forest Park Picnics is committed to accessibility. Learn about our accessibility efforts and how to request accommodations." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://forestparkpicnics.com/accessibility" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sage:       '#607466',
-            'sage-dark':'#4d5e52',
-            beige:      '#d6ce93',
-            cream:      '#efebce',
-            charcoal:   '#1c1c1c',
-          },
-          fontFamily: { ubuntu: ['Ubuntu', 'sans-serif'], luckiest: ['"Luckiest Guy"', 'cursive'] },
-        }
-      }
-    }
-  </script>
-
   <style>
     body { font-family: 'Ubuntu', sans-serif; color: #1c1c1c; }
-    .hero-bg { background: linear-gradient(135deg, #1c1c1c 0%, #607466 50%, #628395 100%); }
     .fpp-display { font-family: 'Luckiest Guy', cursive; letter-spacing: 0.02em; }
-    .btn-primary { background:#1c1c1c; color:#efebce; padding:.85rem 2rem; border-radius:.5rem; font-weight:600; display:inline-block; text-decoration:none; transition:all .2s; }
-    .btn-primary:hover { background:#4d5e52; transform:translateY(-1px); }
-    .btn-secondary { background:transparent; color:#efebce; padding:.85rem 2rem; border-radius:.5rem; font-weight:600; display:inline-block; text-decoration:none; border:2px solid #d6ce93; transition:all .2s; }
-    .btn-secondary:hover { background:rgba(255,255,255,.08); }
-    @media(max-width:768px){ .nav-links{display:none!important;} }
-
-    /* Accessibility: skip-to-content link (visible only when focused) */
     .skip-to-main { position:absolute; top:-100px; left:8px; background:#1c1c1c; color:#efebce; padding:.75rem 1.25rem; border-radius:.5rem; font-weight:600; font-family:'Ubuntu',sans-serif; z-index:9999; text-decoration:none; transition:top .15s ease; }
     .skip-to-main:focus { top:8px; outline:3px solid #d6ce93; outline-offset:2px; }
+    .prose h2 { font-family:'Luckiest Guy', cursive; font-size:1.75rem; color:#1c1c1c; margin-top:2.5rem; margin-bottom:1rem; letter-spacing:.02em; }
+    .prose p { margin-bottom:1rem; line-height:1.7; color:#2c2c2c; }
+    .prose a { color:#4d5e52; text-decoration:underline; font-weight:500; }
+    .prose a:hover { opacity:.75; }
+    .prose ul { list-style:disc; padding-left:1.5rem; margin-bottom:1rem; }
+    .prose ul li { margin-bottom:.5rem; line-height:1.7; color:#2c2c2c; }
+    @media(max-width:768px){ .nav-links{display:none!important;} }
   </style>
 </head>
-
 <body class="bg-white">
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
-
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHFMCN2S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
     <nav class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="/" class="flex-shrink-0">
@@ -69,23 +45,63 @@
   </header>
 
   <main id="main-content">
+    <section class="pt-32 pb-16 px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:#4d5e52">Accessibility Statement</p>
+        <h1 class="fpp-display text-4xl md:text-5xl mb-6 leading-tight">Everyone deserves a good picnic.</h1>
+        <p class="text-lg mb-10 leading-relaxed text-gray-700">
+          Forest Park Picnics is committed to making our website and our picnic experiences usable by everyone, including people with disabilities. We&rsquo;re a small, local operation &mdash; so we appreciate your patience and your feedback as we work to improve.
+        </p>
 
-  <!-- HERO / CONFIRMATION -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg pt-24 pb-16 px-6">
-    <div class="relative z-10 max-w-2xl mx-auto text-center text-white">
-      <p class="text-xs font-semibold uppercase tracking-widest mb-4 opacity-80" style="color:#D6CE93">You're confirmed</p>
-      <h1 class="fpp-display text-5xl md:text-7xl mb-6 leading-tight">You're In.</h1>
-      <p class="text-xl md:text-2xl mb-12 max-w-xl mx-auto leading-relaxed" style="color:#EFEBCE">
-        Thanks for confirming. We&rsquo;ll be in touch.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="/#book" class="btn-primary">Book a Picnic</a>
-        <a href="/" class="btn-secondary">Back to Home</a>
+        <div class="prose max-w-none">
+          <h2>Our commitment</h2>
+          <p>
+            We aim to meet the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong> wherever we reasonably can. These are the international standards for accessible web content, covering things like screen reader compatibility, keyboard navigation, color contrast, and alternative text for images.
+          </p>
+
+          <h2>What we&rsquo;ve done</h2>
+          <ul>
+            <li>Semantic HTML structure with proper headings, landmarks, and labels</li>
+            <li>Keyboard navigation support with a &ldquo;Skip to main content&rdquo; link on every page</li>
+            <li>Alternative text on meaningful images</li>
+            <li>Visible focus indicators for keyboard users</li>
+            <li>A responsive layout that works on screen readers and mobile devices</li>
+            <li>No auto-playing audio or motion content that could be a problem for vestibular disorders</li>
+          </ul>
+
+          <h2>Where we fall short</h2>
+          <p>
+            We&rsquo;re honest about this: some of our brand color combinations don&rsquo;t quite meet the WCAG 4.5:1 contrast ratio for small text. Specifically, our sage-green on cream and our steel-blue on white are close but not perfect. We&rsquo;re working toward a more accessible palette without losing the warmth that makes us us.
+          </p>
+          <p>
+            Our booking widgets are provided by a third-party tool (B&oacute;kun) and are outside our direct control, though we&rsquo;ve raised accessibility concerns with them.
+          </p>
+
+          <h2>Need help? Let us know.</h2>
+          <p>
+            If you have trouble using any part of this site, or if you need accommodations for your picnic experience (dietary, mobility, sensory, or anything else), please reach out. We&rsquo;ll do our best to make it work.
+          </p>
+          <p>
+            Email: <a href="mailto:hey@forestparkpicnics.com">hey@forestparkpicnics.com</a><br />
+            Phone: <a href="tel:3143123549">314-312-3549</a>
+          </p>
+          <p>
+            We aim to respond to accessibility feedback within <strong>3 business days</strong>.
+          </p>
+
+          <h2>This statement</h2>
+          <p>
+            Last reviewed: April 22, 2026. We&rsquo;ll update this page as we improve the site.
+          </p>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <a href="/" class="inline-flex items-center gap-2 font-semibold hover:opacity-75 transition-opacity" style="color:#4d5e52">
+            &larr; Back to Forest Park Picnics
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+    </section>
   </main>
 
   <footer class="py-12 px-6" style="background:#1c1c1c;">
@@ -116,6 +132,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
