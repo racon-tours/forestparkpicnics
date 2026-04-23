@@ -55,6 +55,7 @@
     "@context":"https://schema.org","@type":"LocalBusiness","name":"Forest Park Picnics",
     "description":"Curated, zero-hassle picnic dates for couples in Forest Park, St. Louis.",
     "url":"https://forestparkpicnics.com","email":"hey@forestparkpicnics.com",
+    "address":{"@type":"PostalAddress","streetAddress":"4303 McPherson Ave","addressLocality":"St. Louis","addressRegion":"MO","postalCode":"63108","addressCountry":"US"},
     "image":"https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png",
     "logo":"https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/e3790e54-ac84-47cc-8cbd-5cbba074f0d8/LifeIsShortCircleLogoCREAM.png",
     "priceRange":"$$","currenciesAccepted":"USD","paymentAccepted":"Credit Card, Debit Card",
@@ -127,12 +128,12 @@
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
     <nav class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="/" class="flex-shrink-0">
-        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png" alt="Forest Park Picnics" class="w-auto block" style="height:3rem;max-height:3rem;" />
+        <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/500a9431-8608-4450-bdbf-048473e40a10/bannernavhead.png" alt="Forest Park Picnics" width="172" height="48" decoding="async" fetchpriority="high" class="w-auto block" style="height:3rem;max-height:3rem;" />
       </a>
-      <div class="flex items-center gap-8 ml-12">
-        <a href="#experience" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">The Experience</a>
-        <a href="#testimonials" class="text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">Reviews</a>
-        <a href="#book" class="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity" style="background-color:#628395">Book Now</a>
+      <div class="flex items-center gap-4 md:gap-8 md:ml-12">
+        <a href="#experience" class="hidden md:inline text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">The Experience</a>
+        <a href="#testimonials" class="hidden md:inline text-sm font-medium hover:opacity-70 transition-opacity" style="color:#1C1C1C">Reviews</a>
+        <a href="#book" class="px-4 md:px-6 py-2 rounded-full text-white font-medium text-sm hover:opacity-90 transition-opacity" style="background-color:#628395">Book Now</a>
       </div>
     </nav>
   </header>
@@ -151,24 +152,6 @@
         <a href="#experience" class="px-8 py-4 rounded-full text-lg font-semibold border-2 hover:bg-white/10 transition-colors" style="border-color:#D6CE93;color:#D6CE93">See What's Inside</a>
       </div>
       <p class="mt-10 text-sm opacity-60 tracking-widest uppercase">Wednesday - Saturday · April - October</p>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="section-sage py-12 px-6 text-white">
-    <div class="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
-      <div class="bg-white bg-opacity-10 rounded-2xl p-6">
-        <div class="text-4xl font-bold mb-1">2hrs</div>
-        <div class="text-sm opacity-70">Your private picnic time</div>
-      </div>
-      <div class="bg-white bg-opacity-10 rounded-2xl p-6">
-        <div class="text-4xl font-bold mb-1">90%</div>
-        <div class="text-sm opacity-70">Restaurant packaging eliminated</div>
-      </div>
-      <div class="bg-white bg-opacity-10 rounded-2xl p-6">
-        <div class="text-4xl font-bold mb-1">$5</div>
-        <div class="text-sm opacity-70">Donated to Forest Park Forever</div>
-      </div>
     </div>
   </section>
 
@@ -214,8 +197,10 @@
         <div>
           <img src="https://us.chat-img.sintra.ai/9084f0c1-ae05-4f46-8c2f-b7b9ddc565d8/c15ced55-d34b-4307-87a7-7c8f4aacb00c/image.png"
                alt="Forest Park Picnics basket setup with branded bento boxes, cups, ice cream chiller, and picnic essentials"
+               width="1024" height="1024"
                class="rounded-2xl shadow-2xl w-full"
                loading="lazy"
+               decoding="async"
                onerror="" />
         </div>
       </div>
@@ -418,9 +403,13 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4" style="color:#D6CE93">Contact</h4>
-          <p class="text-sm mb-2" style="color:#EFEBCE">Part of TourCWE</p>
-          <a href="mailto:hey@forestparkpicnics.com" class="text-sm hover:opacity-70 transition-opacity block mb-2" style="color:#EFEBCE">hey@forestparkpicnics.com</a>
+          <h4 class="font-semibold mb-4" style="color:#D6CE93">Contact &amp; Location</h4>
+          <p class="text-sm mb-1" style="color:#EFEBCE">Forest Park Picnics · Part of TourCWE</p>
+          <address class="not-italic text-sm mb-3" style="color:#EFEBCE;font-style:normal;">4303 McPherson Ave<br>St. Louis, MO 63108</address>
+          <a href="mailto:hey@forestparkpicnics.com" class="text-sm hover:opacity-70 transition-opacity block mb-3" style="color:#EFEBCE">hey@forestparkpicnics.com</a>
+          <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color:#D6CE93">Pickup Locations</p>
+          <p class="text-sm mb-1" style="color:#EFEBCE"><a href="https://www.google.com/maps/search/?api=1&amp;query=Art+Hill+Forest+Park+St+Louis+MO" target="_blank" rel="noopener" class="underline hover:opacity-70" style="color:#EFEBCE">Art Hill</a> · lunch</p>
+          <p class="text-sm" style="color:#EFEBCE"><a href="https://www.google.com/maps/search/?api=1&amp;query=Pagoda+Lake+Forest+Park+St+Louis+MO" target="_blank" rel="noopener" class="underline hover:opacity-70" style="color:#EFEBCE">Pagoda Lake</a> · dinner</p>
         </div>
       </div>
       <div class="pt-8 border-t text-center text-sm" style="border-color:rgba(255,255,255,0.1);color:#EFEBCE;opacity:0.5">
