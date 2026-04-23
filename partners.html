@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,7 +25,7 @@
             cream:       '#EFEBCE',
             charcoal:    '#1C1C1C',
           },
-          fontFamily: { ubuntu: ['Ubuntu', 'sans-serif'] },
+          fontFamily: { ubuntu: ['Ubuntu', 'sans-serif'], luckiest: ['"Luckiest Guy"', 'cursive'] },
         }
       }
     }
@@ -38,6 +38,18 @@
     details[open] .chevron { transform: rotate(180deg); }
     .chevron { transition: transform 0.2s ease; }
     details[open] summary { color: #628395; }
+    /* Email opt-in band (matches index.html opt-in styling) */
+    .fpp-display { font-family: 'Luckiest Guy', cursive; letter-spacing: 0.02em; }
+    .fpp-optin-input { background:#efebce; border:2px solid #1c1c1c; color:#1c1c1c; transition:all .15s ease; font-family:'Ubuntu',sans-serif; }
+    .fpp-optin-input:focus { outline:none; background:white; box-shadow:0 0 0 3px rgba(214,206,147,0.5); }
+    .fpp-optin-input::placeholder { color:#888; opacity:.8; }
+    .fpp-optin-btn { background:#1c1c1c; color:#efebce; font-family:'Ubuntu',sans-serif; font-weight:600; letter-spacing:.03em; transition:all .2s ease; cursor:pointer; border:none; }
+    .fpp-optin-btn:hover { background:#4d5e52; transform:translateY(-1px); }
+    .fpp-optin-btn:active { transform:translateY(0); }
+    .fpp-optin-btn:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+    .fpp-error-msg { color:#b33a3a; font-size:.875rem; margin-top:8px; display:none; }
+    .fpp-error-msg.active { display:block; }
+    .fpp-form-hidden { display:none; }
   </style>
 </head>
 
@@ -237,6 +249,29 @@
     </div>
   </section>
 
+  <!-- EMAIL OPT-IN BAND (low-commitment alternative to apply) -->
+  <section class="py-16 px-6" style="background:#EFEBCE" id="stay-in-touch">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:#607466">Not Ready Yet?</p>
+      <h2 class="fpp-display text-3xl md:text-4xl mb-4" style="color:#1c1c1c">Stay in the Loop on New Partner Opportunities</h2>
+      <p class="text-base md:text-lg mb-8 leading-relaxed text-gray-700">
+        We&rsquo;ll let you know when slots open up, when we&rsquo;re scoping a new season, or when something on the calendar fits your kitchen.
+      </p>
+      <div id="fpp-partners-form" class="max-w-md mx-auto">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input type="email" id="fpp-partners-email" class="fpp-optin-input flex-1 px-4 py-3 rounded-md" placeholder="chef@yourkitchen.com" autocomplete="email" required />
+          <button type="button" id="fpp-partners-submit" class="fpp-optin-btn px-6 py-3 rounded-md whitespace-nowrap">KEEP ME POSTED</button>
+        </div>
+        <p id="fpp-partners-error" class="fpp-error-msg"></p>
+        <p class="mt-3 text-xs text-gray-500">Partner-only updates. No marketing spam, ever.</p>
+      </div>
+      <div id="fpp-partners-success" class="fpp-form-hidden max-w-md mx-auto">
+        <p class="text-xl mb-2" style="color:#1c1c1c">Check your inbox &#10003;</p>
+        <p class="text-sm text-gray-700">We sent you a confirmation email. Click the link inside and you&rsquo;re on the list.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="hero-bg py-20 px-6 text-center">
     <div class="max-w-2xl mx-auto">
@@ -290,6 +325,55 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Partners page opt-in (mirrors index.html footer form, posts source=partners-page so server routes to Partners group)
+    (function(){
+      const submitEmail = async (email, errorEl) => {
+        if (errorEl) { errorEl.textContent=''; errorEl.classList.remove('active'); }
+        try {
+          const res = await fetch('/.netlify/functions/subscribe', {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:email, source:'partners-page'})
+          });
+          const data = await res.json().catch(()=>({}));
+          if (res.ok && data.success) return true;
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        } catch(err){
+          if (errorEl){ errorEl.textContent = err.message || 'Something went wrong. Please try again.'; errorEl.classList.add('active'); }
+          return false;
+        }
+      };
+      const form = document.getElementById('fpp-partners-form');
+      const emailEl = document.getElementById('fpp-partners-email');
+      const submit = document.getElementById('fpp-partners-submit');
+      const error = document.getElementById('fpp-partners-error');
+      const success = document.getElementById('fpp-partners-success');
+      if (!submit) return;
+      const handle = async () => {
+        const email = (emailEl.value || '').trim();
+        if (!email) {
+          error.textContent = 'Please enter an email address';
+          error.classList.add('active');
+          emailEl.focus();
+          return;
+        }
+        submit.disabled = true;
+        const orig = submit.textContent;
+        submit.textContent = 'SENDING...';
+        const ok = await submitEmail(email, error);
+        submit.disabled = false;
+        submit.textContent = orig;
+        if (ok) {
+          form.classList.add('fpp-form-hidden');
+          success.classList.remove('fpp-form-hidden');
+        }
+      };
+      submit.addEventListener('click', handle);
+      emailEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); handle(); } });
+    })();
+  </script>
 
 </body>
 </html>

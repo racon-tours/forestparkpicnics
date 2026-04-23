@@ -19,8 +19,9 @@ exports.handler = async function (event) {
   }
 
   const apiKey = process.env.MAILERLITE_API_KEY;
-  const groupId = process.env.MAILERLITE_GROUP_ID;
-  if (!apiKey || !groupId) {
+  const customerGroupId = process.env.MAILERLITE_GROUP_ID;
+  const partnersGroupId = process.env.MAILERLITE_PARTNERS_GROUP_ID;
+  if (!apiKey || !customerGroupId) {
     console.error('Missing MAILERLITE_API_KEY or MAILERLITE_GROUP_ID env var.');
     return {
       statusCode: 500,
@@ -39,6 +40,10 @@ exports.handler = async function (event) {
       body: JSON.stringify({ error: 'Invalid request body' }),
     };
   }
+
+  // Route to partners group when the form comes from the partners page;
+  // everything else (footer, popup) lands in the customer group.
+  const groupId = (source === 'partners-page' && partnersGroupId) ? partnersGroupId : customerGroupId;
 
   // Basic email shape validation — defense in depth, real check is HTML5 + MailerLite
   if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
