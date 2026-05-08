@@ -145,6 +145,34 @@
     }
     .return-text a.review-cta:hover { opacity: .85; }
     .return-text a.review-cta::after { content: ' \2192'; }
+
+    /* ── Soundtrack card ─────────────────────── */
+    .soundtrack-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+      border-left: 3px solid var(--gold); border-radius: 8px; padding: 14px 16px; margin-bottom: 14px;
+      display: none;
+    }
+    .soundtrack-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; text-align: center; }
+    .soundtrack-tagline { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.6; text-align: center; margin-bottom: 14px; }
+    .soundtrack-buttons { display: flex; flex-direction: column; gap: 8px; }
+    @media (min-width: 480px) {
+      .soundtrack-buttons { flex-direction: row; justify-content: center; }
+      .soundtrack-buttons a { flex: 1; max-width: 200px; }
+    }
+    .soundtrack-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .18s, transform .18s;
+    }
+    .soundtrack-btn:hover { opacity: .88; transform: translateY(-1px); }
+    .soundtrack-btn.spotify { background: #1DB954; color: #fff; }
+    .soundtrack-btn.apple-music { background: linear-gradient(135deg, #fa243c 0%, #fb556e 100%); color: #fff; }
+    .soundtrack-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
     .contact-line { text-align: center; font-size: .83rem; color: rgba(255,255,255,.35); padding-top: 4px; }
     .contact-line a { color: var(--gold); text-decoration: none; font-weight: 700; }
 
@@ -180,6 +208,20 @@
 </div>
 
 <div class="page-footer" id="page-footer" style="display:none">
+  <div class="soundtrack-card" id="soundtrack-card">
+    <div class="soundtrack-label">Soundtrack</div>
+    <div class="soundtrack-tagline">A little something for the moment.</div>
+    <div class="soundtrack-buttons">
+      <a id="btn-spotify" class="soundtrack-btn spotify" target="_blank" rel="noopener" style="display:none">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 4.32-1.32 9.721-.66 13.5 1.62.361.181.601.78.241 1.201zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Listen on Spotify
+      </a>
+      <a id="btn-apple-music" class="soundtrack-btn apple-music" target="_blank" rel="noopener" style="display:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        Listen on Apple Music
+      </a>
+    </div>
+  </div>
   <div class="return-card">
     <div class="return-label">When finished</div>
     <div class="return-text" id="return-text"></div>
@@ -319,13 +361,15 @@ function buildMenuItemsMap(rows) {
 //   New menu columns:    A=picnic  B=restaurant  C=item_id  D=dish_override  E=description_override
 //   Legacy menu columns: A=type    B=restaurant  C=dish     D=description
 function buildMenuData(rows, menuItems) {
-  let returnNote = '', contact = '';
+  let returnNote = '', contact = '', spotify = '', appleMusic = '';
   const artHill = [], muny = [];
   for (const row of rows) {
     const type = (row[0] || '').trim().toUpperCase();
     if (!type || type.startsWith('--') || type === 'PICNIC') continue;
-    if (type === 'RETURN')  { returnNote = row[1] || ''; continue; }
-    if (type === 'CONTACT') { contact    = row[1] || ''; continue; }
+    if (type === 'RETURN')      { returnNote = row[1] || ''; continue; }
+    if (type === 'CONTACT')     { contact    = row[1] || ''; continue; }
+    if (type === 'SPOTIFY')     { spotify    = row[1] || ''; continue; }
+    if (type === 'APPLE_MUSIC') { appleMusic = row[1] || ''; continue; }
 
     const restaurant = (row[1] || '').trim();
     const cVal       = (row[2] || '').trim();
@@ -348,7 +392,7 @@ function buildMenuData(rows, menuItems) {
     if (type === 'ART_HILL') artHill.push(item);
     if (type === 'MUNY')     muny.push(item);
   }
-  return { returnNote, contact, artHill, muny };
+  return { returnNote, contact, spotify, appleMusic, artHill, muny };
 }
 
 function groupByRestaurant(items) {
@@ -479,6 +523,21 @@ async function loadMenu() {
           el.appendChild(a);
         }
       });
+    }
+    if (menuData.spotify) {
+      const btn = document.getElementById('btn-spotify');
+      btn.href = menuData.spotify;
+      btn.style.display = '';
+    }
+    if (menuData.appleMusic) {
+      const btn = document.getElementById('btn-apple-music');
+      btn.href = menuData.appleMusic;
+      btn.style.display = '';
+    }
+    if (menuData.spotify || menuData.appleMusic) {
+      document.getElementById('soundtrack-card').style.display = '';
+    }
+    if (menuData.returnNote || menuData.spotify || menuData.appleMusic) {
       document.getElementById('page-footer').style.display = '';
     }
     if (menuData.contact) {
