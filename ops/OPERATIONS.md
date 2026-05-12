@@ -48,10 +48,10 @@ _Most recent entries at the top. Overnight review appends here. Sunday consolida
 
 | | |
 |---|---|
-| **What** | Curated 2-hour private picnic experience in Forest Park, STL |
+| **What** | Curated 90-minute private picnic experience in Forest Park, STL |
 | **Parent brand** | TourCWE — 4303 McPherson Ave, STL 63108 |
 | **Lunch** | Art Hill · Wed–Sat · 11:30 AM · **April–October** |
-| **Dinner** | Pagoda Lake · Wed–Sat · 5:30 PM · **May–September** |
+| **Dinner** | Pagoda Lake · Wed–Sat · 6:00 PM · **May–September** |
 | **Inventory** | 6 baskets (target: 12) |
 | **Price point** | $100+ per booking |
 | **Civic commitment** | $5/booking → Forest Park Forever |
@@ -83,9 +83,9 @@ _Most recent entries at the top. Overnight review appends here. Sunday consolida
 - Confirm restaurant partner pickups for today's rotation.
 - Basket prep: wicker basket, 3-course meal boxed, ice/drinks, utensils, napkins, blanket.
 
-### Service window (2 hours)
+### Service window (90 minutes)
 - Handoff at location (Art Hill statue area for lunch, Pagoda Lake for dinner).
-- Pickup at +2 hr.
+- Pickup at +90 min.
 - Note any issues (weather, partner delay, guest complaint) for post-service.
 
 ### Post-service
