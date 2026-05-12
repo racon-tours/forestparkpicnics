@@ -88,3 +88,23 @@
   from = '/accessibility'
   to   = '/accessibility.html'
   status = 200
+[[redirects]]
+  from = '/giftcards'
+  to   = '/giftcards.html'
+  status = 200
+[[redirects]]
+  from = '/giftcard'
+  to   = '/giftcards.html'
+  status = 301
+[[redirects]]
+  from = '/gift-card'
+  to   = '/giftcards.html'
+  status = 301
+[[redirects]]
+  from = '/gift-cards'
+  to   = '/giftcards.html'
+  status = 301
+[[redirects]]
+  from = '/gifts'
+  to   = '/giftcards.html'
+  status = 301

@@ -20,7 +20,13 @@
   </url>
   <url>
     <loc>https://forestparkpicnics.com/forest-park-date-ideas</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forestparkpicnics.com/giftcards</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
