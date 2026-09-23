@@ -89,22 +89,32 @@
   to   = '/accessibility.html'
   status = 200
 [[redirects]]
+  from = '/giftcards.html'
+  to   = '/'
+  status = 301
+  force = true
+[[redirects]]
   from = '/giftcards'
-  to   = '/giftcards.html'
-  status = 200
+  to   = '/'
+  status = 301
+  force = true
 [[redirects]]
   from = '/giftcard'
-  to   = '/giftcards.html'
+  to   = '/'
   status = 301
+  force = true
 [[redirects]]
   from = '/gift-card'
-  to   = '/giftcards.html'
+  to   = '/'
   status = 301
+  force = true
 [[redirects]]
   from = '/gift-cards'
-  to   = '/giftcards.html'
+  to   = '/'
   status = 301
+  force = true
 [[redirects]]
   from = '/gifts'
-  to   = '/giftcards.html'
+  to   = '/'
   status = 301
+  force = true
