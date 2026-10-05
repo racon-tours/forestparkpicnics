@@ -20,101 +20,188 @@
     Content-Type  = "application/xml"
 
 [[redirects]]
-  from = "/art-hill"
-  to   = "/art-hill-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/art_hill"
-  to   = "/art-hill-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/arthill"
-  to   = "/art-hill-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/lunch"
-  to   = "/art-hill-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/pagoda-lake"
-  to   = "/pagoda-lake-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/pagoda_lake"
-  to   = "/pagoda-lake-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/pagoda"
-  to   = "/pagoda-lake-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/dinner"
-  to   = "/pagoda-lake-picnic-st-louis"
-  status = 301
-
-[[redirects]]
-  from = "/date-ideas"
-  to   = "/forest-park-date-ideas"
-  status = 301
-
-[[redirects]]
-  from = "/forest-park-dates"
-  to   = "/forest-park-date-ideas"
-  status = 301
-
-[[redirects]]
-  from = "/stl-date-ideas"
-  to   = "/forest-park-date-ideas"
-  status = 301
-
-# Internal ops docs — not publicly served
-[[redirects]]
   from = "/ops/*"
   to   = "/404"
   status = 404
-  force  = true
+  force = true
+
 [[redirects]]
-  from = '/thanks'
-  to   = '/thanks.html'
+  from = "/thanks"
+  to   = "/thanks.html"
   status = 200
+
 [[redirects]]
-  from = '/accessibility'
-  to   = '/accessibility.html'
+  from = "/accessibility"
+  to   = "/accessibility.html"
   status = 200
+
+# Oct 2026: site is an email-collector only. Every old page goes home.
+# 302 (temporary) so it is easy to bring pages back later.
+
 [[redirects]]
-  from = '/giftcards.html'
-  to   = '/'
-  status = 301
+  from = "/art-hill-picnic-st-louis"
+  to   = "/"
+  status = 302
   force = true
+
 [[redirects]]
-  from = '/giftcards'
-  to   = '/'
-  status = 301
+  from = "/art-hill-picnic-st-louis.html"
+  to   = "/"
+  status = 302
   force = true
+
 [[redirects]]
-  from = '/giftcard'
-  to   = '/'
-  status = 301
+  from = "/pagoda-lake-picnic-st-louis"
+  to   = "/"
+  status = 302
   force = true
+
 [[redirects]]
-  from = '/gift-card'
-  to   = '/'
-  status = 301
+  from = "/pagoda-lake-picnic-st-louis.html"
+  to   = "/"
+  status = 302
   force = true
+
 [[redirects]]
-  from = '/gift-cards'
-  to   = '/'
-  status = 301
+  from = "/forest-park-date-ideas"
+  to   = "/"
+  status = 302
   force = true
+
 [[redirects]]
-  from = '/gifts'
-  to   = '/'
-  status = 301
+  from = "/forest-park-date-ideas.html"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/partners"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/partners.html"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/partners/*"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/menu"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/menu/*"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/art-hill"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/art_hill"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/arthill"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/lunch"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/pagoda-lake"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/pagoda_lake"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/pagoda"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/dinner"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/date-ideas"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/forest-park-dates"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/stl-date-ideas"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/giftcards.html"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/giftcards"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/giftcard"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/gift-card"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/gift-cards"
+  to   = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/gifts"
+  to   = "/"
+  status = 302
   force = true
